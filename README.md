@@ -1,7 +1,7 @@
 # JobMate
 
-![Forks](https://img.shields.io/github/forks/larymak/Python-project-Scripts)
-![Stars](https://img.shields.io/github/stars/larymak/Python-project-Scripts)
+![Forks](https://img.shields.io/github/forks/NaraeJang/Jobmate)
+![Stars](https://img.shields.io/github/stars/NaraeJang/Jobmate)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
 
 ## Overview
