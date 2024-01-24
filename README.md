@@ -2,7 +2,7 @@
 
 ![Forks](https://img.shields.io/github/forks/NaraeJang/Jobmate)
 ![Stars](https://img.shields.io/github/stars/NaraeJang/Jobmate)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)[https://opensource.org/licenses/MIT]
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Overview
 
@@ -84,7 +84,7 @@ I welcome any and all contributions! Here are some ways you can get started:
 
 ## License
 
-The MIT License (MIT)
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2024 Narae Jang
 
