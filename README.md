@@ -8,7 +8,7 @@
 
 JobMate is your personalized solution for tracking job applications, crafted to simplify and streamline your job search process. With JobMate, you can efficiently manage your job applications, track the progress of each one, and stay organized throughout your career journey.
 
-### Features
+#### Features
 
 - **Application Tracking:** Keep a comprehensive record of every job application.
 - **Stage Management:** Easily monitor and update the status of your applications.
@@ -53,11 +53,15 @@ npm start
 
 ## Dependencies
 
+#### Front-end
+
 - Vite.js
 - redux.js
 - Axios
 - Styled components
 - Moment.js
+
+#### Back-end
 
 - Node.js
 - Express.js
@@ -72,7 +76,7 @@ I welcome any and all contributions! Here are some ways you can get started:
 3. Suggestions: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or improvements you would like to see!
 4. Documentation: If you see the need for some additional documentation, feel free to add some!
 
-### Instructions
+#### Instructions
 
 1. Fork this repository
 2. Clone your forked repository
