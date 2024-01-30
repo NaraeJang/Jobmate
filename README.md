@@ -56,8 +56,14 @@ npm start
 #### Front-end
 
 - Vite.js
-- redux.js
+- React-query
+- React-query-devtools
 - Axios
+- Dayjs
+- React-icons
+- React-router-dom
+- react-toastify
+- recharts
 - Styled components
 - Moment.js
 
