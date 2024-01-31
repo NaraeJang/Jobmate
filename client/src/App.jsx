@@ -10,22 +10,25 @@ import {
   AddJob,
   AllJobs,
   Profile,
+  Error,
 } from './pages';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
       { index: true, element: <Landing /> },
       { path: 'about', element: <About /> },
     ],
   },
-  { path: '/login', element: <Login /> },
-  { path: '/register', element: <Register /> },
+  { path: '/login', element: <Login />, errorElement: <Error /> },
+  { path: '/register', element: <Register />, errorElement: <Error /> },
   {
     path: '/dashboard/',
     element: <DashboardLayout />,
+    errorElement: <Error />,
     children: [
       { index: true, element: <Overview /> },
       { path: 'add-job', element: <AddJob /> },
