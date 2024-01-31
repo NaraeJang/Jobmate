@@ -70,7 +70,16 @@ const Wrapper = styled.section`
     }
 
     img {
-      width: max(30rem, 20vw);
+      width: min(50rem, 40vw);
+    }
+  }
+
+  @media (min-width: 1120px) {
+    .container {
+      max-width: 100vw;
+      max-width: 100svw;
+
+      margin: 0 auto;
     }
   }
 `;
