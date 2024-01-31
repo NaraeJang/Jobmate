@@ -277,6 +277,7 @@ ul {
 .btn-primary:hover {
   box-shadow: var(--shadow-5);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .btn-primary:active {
@@ -294,6 +295,7 @@ ul {
 .btn-secondary:hover {
   border: 1px solid var(--primary-500);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .btn-secondary:active {

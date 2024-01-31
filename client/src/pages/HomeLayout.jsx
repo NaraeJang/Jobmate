@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import { Navbar } from '../components';
+import { NavbarDesktop, NavbarMobile } from '../components';
 
 const HomeLayout = () => {
   const date = new Date().getFullYear();
 
   return (
     <div>
-      <Navbar />
+      <NavbarDesktop />
+      {/* <NavbarMobile /> */}
       <Outlet />
       <footer>
         <p>&copy; {date} Narae Jang. All rights reserved.</p>
