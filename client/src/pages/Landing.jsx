@@ -17,8 +17,12 @@ const Landing = () => {
             monitor progress, and manage your career journey with ease.
           </p>
           <div>
-            <Link className="btn btn-primary">Register</Link>
-            <Link className="btn btn-text">Log In or Try Demo User</Link>
+            <Link className="btn btn-primary" to="/register">
+              Register
+            </Link>
+            <Link className="btn btn-text" to="/login">
+              Log In or Try Demo User
+            </Link>
           </div>
         </header>
         <img src={hero} alt="job hunt" className="img main-img" />
