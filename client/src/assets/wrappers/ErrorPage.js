@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.main`
   width: 100vw;
+  width: 100svw;
   .container {
     height: 100vh;
+    height: 100svh;
 
     display: flex;
     flex-direction: column;
