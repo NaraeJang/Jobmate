@@ -25,6 +25,7 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     gap: 2rem;
+    text-align: center;
   }
 
   a:not(.btn) {
@@ -35,6 +36,10 @@ const Wrapper = styled.section`
   a:hover:not(.btn) {
     color: var(--primary-400);
     font-weight: var(--font-weight-semibold);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 

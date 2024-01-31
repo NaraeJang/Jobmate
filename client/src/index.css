@@ -232,6 +232,7 @@ a {
   text-decoration: none;
   color: var(--primary-400);
 }
+
 a:hover {
   text-decoration: underline;
 }
