@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   position: sticky;
+  background: var(--white);
 
   div {
     height: 4.625rem;
@@ -24,7 +25,7 @@ const Wrapper = styled.section`
   ul {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
@@ -36,6 +37,12 @@ const Wrapper = styled.section`
   a:hover:not(.btn) {
     color: var(--primary-400);
     font-weight: var(--font-weight-semibold);
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   @media (max-width: 768px) {

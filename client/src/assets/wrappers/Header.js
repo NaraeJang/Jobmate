@@ -11,6 +11,7 @@ const Wrapper = styled.section`
   }
 
   header {
+    margin-top: 4rem;
     height: 68vh;
     height: 68svh;
     display: flex;
@@ -81,6 +82,10 @@ const Wrapper = styled.section`
 
       margin: 0 auto;
     }
+  }
+
+  @media (max-height: 430px) {
+    margin-top: 4.625rem;
   }
 `;
 

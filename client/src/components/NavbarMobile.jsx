@@ -49,8 +49,17 @@ const Navbar = () => {
               <Link to="./about">About</Link>
             </li>
             <li>
-              <Link className="btn btn-primary btn-small" to="./dashboard">
-                Try Demo User
+              <Link
+                className="btn btn-primary btn-small btn-block"
+                to="./register">
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="btn btn-secondary btn-small btn-block"
+                to="./login">
+                Log In or Try Demo User
               </Link>
             </li>
           </ul>

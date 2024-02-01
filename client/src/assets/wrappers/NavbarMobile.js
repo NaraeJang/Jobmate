@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.nav`
   position: absolute;
+  top: 0;
+  z-index: 100;
 
   .container {
     position: relative;
@@ -11,8 +13,6 @@ const Wrapper = styled.nav`
     border-bottom: 1px solid var(--grey-200);
 
     background: var(--white);
-
-    z-index: 100;
   }
 
   .nav-header {
@@ -56,6 +56,10 @@ const Wrapper = styled.nav`
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  ul {
+    width: 100%;
   }
 
   li:first-child {

@@ -15,9 +15,12 @@ const Navbar = () => {
             <li>
               <Link to="./about">About</Link>
             </li>
-            <li>
-              <Link className="btn btn-primary btn-small" to="./dashboard">
-                Try Demo User
+            <li className="btn-container">
+              <Link className="btn btn-primary btn-small" to="./register">
+                Register
+              </Link>
+              <Link className="btn btn-secondary btn-small" to="./login">
+                Login
               </Link>
             </li>
           </ul>
