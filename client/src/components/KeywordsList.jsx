@@ -9,7 +9,7 @@ const KeywordsList = () => {
           const { id, title, context, icon } = keyword;
 
           return (
-            <article>
+            <article key={id}>
               <span className="icon">{icon}</span>
               <div>
                 <h5>{title}</h5>

@@ -7,7 +7,7 @@ const HomeLayout = () => {
   return (
     <div>
       <NavbarDesktop />
-      {/* <NavbarMobile /> */}
+      <NavbarMobile />
       <Outlet />
       <footer>
         <div className="container">
