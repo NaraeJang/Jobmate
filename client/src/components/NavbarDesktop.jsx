@@ -16,7 +16,7 @@ const Navbar = () => {
               <Link to="./about">About</Link>
             </li>
             <li>
-              <Link className="btn btn-primary btn-small" to="./about">
+              <Link className="btn btn-primary btn-small" to="./dashboard">
                 Try Demo User
               </Link>
             </li>
