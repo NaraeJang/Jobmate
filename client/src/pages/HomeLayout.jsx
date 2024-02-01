@@ -10,7 +10,9 @@ const HomeLayout = () => {
       {/* <NavbarMobile /> */}
       <Outlet />
       <footer>
-        <p>&copy; {date} Narae Jang. All rights reserved.</p>
+        <div className="container">
+          <p>&copy; {date} Narae Jang. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );

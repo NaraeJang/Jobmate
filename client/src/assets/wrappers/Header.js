@@ -11,8 +11,8 @@ const Wrapper = styled.section`
   }
 
   header {
-    height: 70vh;
-    height: 70svh;
+    height: 68vh;
+    height: 68svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
