@@ -7,5 +7,7 @@ export { default as SubmitBtn } from './SubmitBtn';
 export { default as DashboardNavbarDesktop } from './DashboardNavbarDesktop';
 export { default as DashboardNavbarMobile } from './DashboardNavbarMobile';
 export { default as Sidebar } from './Sidebar';
+export { default as NavbarUser } from './NavbarUser';
+export { default as ThemeToggle } from './ThemeToggle';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';

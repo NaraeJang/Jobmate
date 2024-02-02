@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/NavbarDesktop';
 import { Logo } from '.';
 
@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              <Link to="./about">About</Link>
+              <NavLink to="./about">About</NavLink>
             </li>
             <li className="btn-container">
               <Link className="btn btn-primary btn-small" to="./register">

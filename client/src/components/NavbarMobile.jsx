@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/NavbarMobile';
 import { Logo } from '.';
 import { useRef, useState } from 'react';
@@ -46,7 +46,7 @@ const Navbar = () => {
           style={linksStyle}>
           <ul className="links" ref={linksRef}>
             <li>
-              <Link to="./about">About</Link>
+              <NavLink to="./about">About</NavLink>
             </li>
             <li>
               <Link

@@ -79,6 +79,12 @@ const Wrapper = styled.nav`
     margin-bottom: 1.5rem;
   }
 
+  .active {
+    color: var(--grey-800);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
   @media (min-width: 769px) {
     display: none;
   }

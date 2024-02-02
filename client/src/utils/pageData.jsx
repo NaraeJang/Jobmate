@@ -33,9 +33,9 @@ export const keywordsList = [
 
 export const dashboardLinks = [
   {
-    text: 'add job',
+    text: 'overview',
     path: '.',
-    icon: <FaWpforms />,
+    icon: <IoBarChartSharp />,
   },
   {
     text: 'all jobs',
@@ -43,20 +43,20 @@ export const dashboardLinks = [
     icon: <MdQueryStats />,
   },
   {
-    text: 'overview',
-    path: 'overview',
-    icon: <IoBarChartSharp />,
+    text: 'add job',
+    path: 'add-job',
+    icon: <FaWpforms />,
   },
   {
     text: 'profile',
     path: 'profile',
     icon: <ImProfile />,
   },
-  {
-    text: 'admin',
-    path: 'admin',
-    icon: <MdAdminPanelSettings />,
-  },
 ];
 
+//  {
+//     text: 'admin',
+//     path: 'admin',
+//     icon: <MdAdminPanelSettings />,
+//   },
 // context: `View a comprehensive list of companies you've applied to.`,

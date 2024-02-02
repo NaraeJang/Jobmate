@@ -44,7 +44,11 @@ const Wrapper = styled.section`
     flex-direction: row;
     gap: 1rem;
   }
-
+  .active {
+    color: var(--grey-800);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
   @media (max-width: 768px) {
     display: none;
   }
