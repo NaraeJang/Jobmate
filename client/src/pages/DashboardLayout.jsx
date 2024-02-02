@@ -6,24 +6,35 @@ import {
   DashboardNavbarMobile,
   Sidebar,
 } from '../components';
+import { createContext, useState } from 'react';
 
 const DashboardLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
 
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const DashboardContext = createContext();
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
-    <Wrapper>
-      <main className="dashboard">
-        <Sidebar />
-        <div>
-          <DashboardNavbarDesktop />
-          <DashboardNavbarMobile />
-          <div className="dashboard-page">
-            {isPageLoading ? <Loading /> : <Outlet />}
+    <DashboardContext.Provider value={(showSidebar, toggleSidebar)}>
+      <Wrapper>
+        <main className="dashboard">
+          <Sidebar />
+          <div>
+            <DashboardNavbarDesktop />
+            <DashboardNavbarMobile />
+            <div className="dashboard-page">
+              {isPageLoading ? <Loading /> : <Outlet />}
+            </div>
           </div>
-        </div>
-      </main>
-    </Wrapper>
+        </main>
+      </Wrapper>
+    </DashboardContext.Provider>
   );
 };
 export default DashboardLayout;
