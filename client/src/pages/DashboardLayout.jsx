@@ -8,9 +8,11 @@ const DashboardLayout = () => {
 
   return (
     <Wrapper>
-      <div className="dashboard-page">
-        {isPageLoading ? <Loading /> : <Outlet />}
-      </div>
+      <main className="dashboard">
+        <div className="dashboard-page">
+          {isPageLoading ? <Loading /> : <Outlet />}
+        </div>{' '}
+      </main>
     </Wrapper>
   );
 };

@@ -4,5 +4,8 @@ export { default as Header } from './Header';
 export { default as KeywordsList } from './KeywordsList';
 export { default as FormRow } from './FormRow';
 export { default as SubmitBtn } from './SubmitBtn';
+export { default as DashboardNavbarDesktop } from './DashboardNavbarDesktop';
+export { default as DashboardNavbarMobile } from './DashboardNavbarMobile';
+export { default as Sidebar } from './Sidebar';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
