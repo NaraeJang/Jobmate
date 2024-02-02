@@ -1,6 +1,11 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';
-import { Loading } from '../components';
+import {
+  Loading,
+  DashboardNavbarDesktop,
+  DashboardNavbarMobile,
+  Sidebar,
+} from '../components';
 
 const DashboardLayout = () => {
   const navigation = useNavigation();
@@ -9,9 +14,14 @@ const DashboardLayout = () => {
   return (
     <Wrapper>
       <main className="dashboard">
-        <div className="dashboard-page">
-          {isPageLoading ? <Loading /> : <Outlet />}
-        </div>{' '}
+        <Sidebar />
+        <div>
+          <DashboardNavbarDesktop />
+          <DashboardNavbarMobile />
+          <div className="dashboard-page">
+            {isPageLoading ? <Loading /> : <Outlet />}
+          </div>
+        </div>
       </main>
     </Wrapper>
   );
