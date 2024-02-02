@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.nav`
+const Wrapper = styled.div`
   position: absolute;
   top: 0;
   z-index: 100;
@@ -21,7 +21,11 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     height: 3.5rem;
   }
-
+  .toggle-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.125rem;
+  }
   .nav-toggle {
     font-size: 1.5rem;
     color: var(--grey-500);
@@ -34,6 +38,11 @@ const Wrapper = styled.nav`
     cursor: pointer;
   }
 
+  .mobile-header-spacer {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -41,11 +50,6 @@ const Wrapper = styled.nav`
 
   .logo img {
     height: 1.375rem;
-  }
-
-  .mobile-header-spacer {
-    width: 2.5rem;
-    height: 2.5rem;
   }
 
   .links-container {
@@ -77,6 +81,14 @@ const Wrapper = styled.nav`
 
   li:last-child {
     margin-bottom: 1.5rem;
+  }
+
+  .dark-mode__user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
   }
 
   @media (min-width: 769px) {

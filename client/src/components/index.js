@@ -6,6 +6,7 @@ export { default as FormRow } from './FormRow';
 export { default as SubmitBtn } from './SubmitBtn';
 export { default as DashboardNavbarDesktop } from './DashboardNavbarDesktop';
 export { default as DashboardNavbarMobile } from './DashboardNavbarMobile';
+export { default as DashboardNavLinks } from './DashboardNavLinks';
 export { default as Sidebar } from './Sidebar';
 export { default as NavbarUser } from './NavbarUser';
 export { default as ThemeToggle } from './ThemeToggle';

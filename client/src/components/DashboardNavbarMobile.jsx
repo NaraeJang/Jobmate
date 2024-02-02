@@ -2,9 +2,8 @@ import Wrapper from '../assets/wrappers/DashboardNavbarMobile';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Logo } from '.';
 import { useRef, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { NavbarUser, ThemeToggle } from '.';
-import { dashboardLinks } from '../utils/pageData';
+import { Link } from 'react-router-dom';
+import { NavbarUser, ThemeToggle, DashboardNavLinks } from '.';
 
 const DashboardNavbarMobile = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -33,12 +32,17 @@ const DashboardNavbarMobile = () => {
           style={{
             borderBottom: showLinks ? '1px solid var(--grey-200)' : 'none',
           }}>
-          <button className="nav-toggle" onClick={toggleLinks}>
-            <RxHamburgerMenu />
-          </button>
+          <div className="toggle-container">
+            <button className="nav-toggle" onClick={toggleLinks}>
+              <RxHamburgerMenu />
+            </button>
+            <div className="mobile-header-spacer"> </div>
+          </div>
+
           <Link to="/dashboard" className="logo">
             <Logo />
           </Link>
+
           <div className="dark-mode__user">
             <ThemeToggle />
             <NavbarUser />
@@ -49,20 +53,7 @@ const DashboardNavbarMobile = () => {
           className="links-container"
           ref={linksContainerRef}
           style={linksStyle}>
-          <ul className="links" ref={linksRef}>
-            {dashboardLinks.map((link, index) => {
-              const { text, path, icon } = link;
-
-              return (
-                <li key={index}>
-                  <NavLink to={`/dashboard/${path}`}>
-                    {icon}
-                    {text}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
+          <DashboardNavLinks linksRef={linksRef} />
         </div>
       </div>
     </Wrapper>
