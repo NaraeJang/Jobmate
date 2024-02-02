@@ -1,4 +1,6 @@
+import Wrapper from '../assets/wrappers/DashboardNavbarDesktop';
+
 const DashboardNavbarDesktop = () => {
-  return <div>DashboardNavbarDesktop</div>;
+  return <Wrapper>DashboardNavbarDesktop</Wrapper>;
 };
 export default DashboardNavbarDesktop;
