@@ -3,18 +3,13 @@ import styled from 'styled-components';
 const Wrapper = styled.aside`
   .dashboard-container {
     position: relative;
-    border: 3px solid #73ad21;
-
+    width: 10rem;
     min-height: 100vh;
     height: 100vh;
     height: 100svh;
 
-    background-color: teal;
-
     border-right: 1px solid var(--grey-300, #d4d4d4);
     padding: 0;
-
-    width: 10rem;
 
     transition: var(--transition);
   }
@@ -27,10 +22,17 @@ const Wrapper = styled.aside`
     width: 2.5rem;
     height: 2.5rem;
 
-    border: 3px solid red;
-    cursor: pointer;
+    border-radius: 2.5rem;
+    border: none;
+    background: var(--primary-50, #fde8ee);
 
+    cursor: pointer;
+    transition: var(--transition);
     z-index: 100;
+  }
+
+  .toggle-btn:hover {
+    color: var(--primary-500);
   }
 
   .sidebar-container {
@@ -40,16 +42,12 @@ const Wrapper = styled.aside`
     height: 100svh;
     width: auto;
 
-    background-color: lightblue;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
     padding: 3.38rem 2rem;
-
-    transition: 1s ease-in-out all;
   }
 
   span,
@@ -75,7 +73,6 @@ const Wrapper = styled.aside`
 
   header {
     height: 2.5rem;
-    background: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,16 +92,20 @@ const Wrapper = styled.aside`
     text-decoration: none;
 
     cursor: pointer;
+    transition: var(--transition);
   }
 
   .logout svg {
     height: 1rem;
     width: 1rem;
     margin: 0.5rem 0;
-    color: var(grey-700, #404040);
+    color: var(--grey-700, #404040);
   }
 
   .logout:hover {
+    color: var(--primary-500, #ee1d52);
+  }
+  .logout:hover svg {
     color: var(--primary-500, #ee1d52);
   }
   @media (max-width: 768px) {

@@ -15,14 +15,20 @@ const Wrapper = styled.nav`
     text-transform: capitalize;
     gap: 1.5rem;
     text-decoration: none;
+    color: var(--grey-700, #404040) !important;
+  }
+
+  a > * {
     transition: var(--transition);
+  }
+
+  a:hover .icon {
+    background-color: var(--primary-50, #fde8ee);
+    color: var(--primary-500, #ee1d52);
   }
 
   a:hover span {
     color: var(--primary-500, #ee1d52);
-  }
-  a:hover .icon {
-    background-color: var(--primary-50, #fde8ee);
   }
 
   a span {
@@ -42,7 +48,6 @@ const Wrapper = styled.nav`
   svg {
     height: 1.5rem;
     width: 1.5rem;
-    color: var(grey-700, #404040);
   }
 
   a.active span {
