@@ -6,7 +6,9 @@ import {
   DashboardNavbarMobile,
   Sidebar,
 } from '../components';
-import { createContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+
+const DashboardContext = createContext();
 
 const DashboardLayout = () => {
   const navigation = useNavigation();
@@ -14,10 +16,9 @@ const DashboardLayout = () => {
 
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const DashboardContext = createContext();
-
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
+    console.log('clicked');
   };
 
   return (
@@ -37,4 +38,6 @@ const DashboardLayout = () => {
     </DashboardContext.Provider>
   );
 };
+
+export const useDashboardContext = () => useContext(DashboardContext);
 export default DashboardLayout;
