@@ -12,3 +12,4 @@ export { default as NavbarUser } from './NavbarUser';
 export { default as ThemeToggle } from './ThemeToggle';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
+export { default as SymbolLogo } from './SymbolLogo';

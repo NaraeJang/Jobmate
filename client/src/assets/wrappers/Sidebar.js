@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const Wrapper = styled.aside`
   .dashboard-container {
     position: relative;
-    width: 10rem;
+
+    width: 8.5rem;
     min-height: 100vh;
     height: 100vh;
     height: 100svh;
@@ -16,7 +17,7 @@ const Wrapper = styled.aside`
 
   .toggle-btn {
     position: absolute;
-    top: 3.38rem;
+    top: min(2.5rem, 3vh);
     right: calc(-2.5rem / 2);
 
     width: 2.5rem;
@@ -42,12 +43,15 @@ const Wrapper = styled.aside`
     height: 100svh;
     width: auto;
 
+    top: 0;
+    left: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    padding: 3.38rem 2rem;
+    padding: min(2.5rem, 3vh) 2rem;
   }
 
   span,
@@ -58,10 +62,14 @@ const Wrapper = styled.aside`
   }
 
   .dashboard-container.show-sidebar {
-    width: clamp(20.475rem, 20.5rem, 20.5vw);
-    align-items: start;
+    /* width: clamp(20.475rem, 20.5rem, 20.5vw); */
+    width: 13rem;
 
     padding: 0 1.5rem;
+  }
+
+  .dashboard-container.show-sidebar .sidebar-container {
+    align-items: start;
   }
 
   .show-sidebar span,
@@ -78,6 +86,18 @@ const Wrapper = styled.aside`
     justify-content: center;
   }
 
+  header img {
+    width: 4.5rem;
+    transition: var(--transition);
+  }
+
+  .show-sidebar header img {
+    width: 6rem;
+  }
+  .symbol-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
   .content li {
     margin-bottom: 1rem;
     height: auto;

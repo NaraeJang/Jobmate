@@ -1,11 +1,10 @@
 import Wrapper from '../assets/wrappers/Sidebar';
 import { useDashboardContext } from '../pages/DashboardLayout';
-import { DashboardNavLinks } from './';
-import Logo from './Logo';
+import { DashboardNavLinks, Logo, SymbolLogo } from './';
 import { Link } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const Sidebar = () => {
   // const { showSidebar, toggleSidebar } = useDashboardContext();
@@ -29,7 +28,7 @@ const Sidebar = () => {
         </button>
         <div className="sidebar-container">
           <header>
-            <Logo />
+            <Logo />{' '}
           </header>
           <div className="content">
             <DashboardNavLinks />

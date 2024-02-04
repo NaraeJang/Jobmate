@@ -26,7 +26,7 @@ const DashboardLayout = () => {
       <Wrapper>
         <main className="dashboard">
           <Sidebar />
-          <div>
+          <div className="dashboard-container">
             <DashboardNavbarDesktop />
             <DashboardNavbarMobile />
             <div className="dashboard-page">
