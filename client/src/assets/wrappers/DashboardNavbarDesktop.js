@@ -15,6 +15,11 @@ const Wrapper = styled.section`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
+  }
+
+  .user-container:hover {
   }
 
   @media (max-width: 768px) {

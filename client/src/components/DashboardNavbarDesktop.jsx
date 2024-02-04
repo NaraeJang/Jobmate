@@ -7,7 +7,6 @@ const DashboardNavbarDesktop = () => {
       <ThemeToggle />
       <div className="user-container">
         <NavbarUser />
-        <p>Demo User</p>
       </div>
     </Wrapper>
   );

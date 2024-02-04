@@ -17,6 +17,13 @@ const Wrapper = styled.div`
     border-color: transparent;
 
     cursor: pointer;
+    transition: var(--transition);
+  }
+
+  @media (min-width: 769px) {
+    svg:hover {
+      color: var(--primary-400);
+    }
   }
 `;
 

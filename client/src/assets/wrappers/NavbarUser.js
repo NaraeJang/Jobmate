@@ -1,12 +1,22 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--grey-800);
+  }
 
-  width: 2.5rem;
-  height: 2.5rem;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
   svg {
     width: 1.5rem;
@@ -17,6 +27,19 @@ const Wrapper = styled.div`
     border-color: transparent;
 
     cursor: pointer;
+  }
+
+  p {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+    }
   }
 `;
 
