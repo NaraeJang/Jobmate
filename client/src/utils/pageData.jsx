@@ -6,9 +6,9 @@ import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
 //dashboard links
 import { IoBarChartSharp } from 'react-icons/io5';
 import { MdQueryStats } from 'react-icons/md';
-import { FaWpforms } from 'react-icons/fa';
-import { ImProfile } from 'react-icons/im';
-import { MdAdminPanelSettings } from 'react-icons/md';
+import { AiOutlineFileAdd } from 'react-icons/ai';
+import { FiUser } from 'react-icons/fi';
+import { GrShieldSecurity } from 'react-icons/gr';
 
 export const keywordsList = [
   {
@@ -45,17 +45,17 @@ export const dashboardLinks = [
   {
     text: 'add job',
     path: 'add-job',
-    icon: <FaWpforms />,
+    icon: <AiOutlineFileAdd />,
   },
   {
     text: 'profile',
     path: 'profile',
-    icon: <ImProfile />,
+    icon: <FiUser />,
   },
   {
     text: 'admin',
     path: 'admin',
-    icon: <MdAdminPanelSettings />,
+    icon: <GrShieldSecurity />,
   },
 ];
 
