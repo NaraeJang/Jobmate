@@ -2,9 +2,15 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   @media (min-width: 769px) {
-    .dashboard {
-      display: grid;
-      grid-template-columns: auto 1fr;
+    .dashboard-container {
+      /* display: grid;
+      grid-template-columns: auto 1fr; */
+
+      margin-left: 8.5rem;
+    }
+
+    .open-sidebar + .dashboard-container {
+      margin-left: 12rem; /* Updated margin when .show-sidebar is present */
     }
   }
 `;

@@ -1,34 +1,25 @@
 import Wrapper from '../assets/wrappers/Sidebar';
 import { useDashboardContext } from '../pages/DashboardLayout';
-import { DashboardNavLinks, Logo, SymbolLogo } from './';
+import { DashboardNavLinks, Logo } from './';
 import { Link } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import { useState } from 'react';
 
 const Sidebar = () => {
-  // const { showSidebar, toggleSidebar } = useDashboardContext();
-
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
+  const { showSidebar, toggleSidebar } = useDashboardContext();
 
   return (
-    <Wrapper>
+    <Wrapper className={showSidebar ? `open-sidebar` : ''}>
       <div
         className={
-          showSidebar
-            ? `dashboard-container show-sidebar`
-            : 'dashboard-container'
+          showSidebar ? `main-container show-sidebar` : 'main-container'
         }>
         <button type="button" className="toggle-btn" onClick={toggleSidebar}>
           {showSidebar ? <FaChevronLeft /> : <FaChevronRight />}
         </button>
         <div className="sidebar-container">
           <header>
-            <Logo />{' '}
+            <Logo />
           </header>
           <div className="content">
             <DashboardNavLinks />

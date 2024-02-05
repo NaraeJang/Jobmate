@@ -15,20 +15,24 @@ const DashboardLayout = () => {
   const isPageLoading = navigation.state === 'loading';
 
   const [showSidebar, setShowSidebar] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
-    console.log('clicked');
+  };
+  const toggleDarkTheme = () => {
+    console.log('toggle dark theme');
   };
 
   return (
-    <DashboardContext.Provider value={(showSidebar, toggleSidebar)}>
+    <DashboardContext.Provider
+      value={{ showSidebar, isDarkTheme, toggleSidebar, toggleDarkTheme }}>
       <Wrapper>
+        <DashboardNavbarMobile />
         <main className="dashboard">
           <Sidebar />
           <div className="dashboard-container">
             <DashboardNavbarDesktop />
-            <DashboardNavbarMobile />
             <div className="dashboard-page">
               {isPageLoading ? <Loading /> : <Outlet />}
             </div>

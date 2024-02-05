@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.aside`
-  .dashboard-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100svh;
+
+  .main-container {
     position: relative;
 
     width: 8.5rem;
@@ -61,14 +67,14 @@ const Wrapper = styled.aside`
     display: none;
   }
 
-  .dashboard-container.show-sidebar {
+  .main-container.show-sidebar {
     /* width: clamp(20.475rem, 20.5rem, 20.5vw); */
     width: 13rem;
 
     padding: 0 1.5rem;
   }
 
-  .dashboard-container.show-sidebar .sidebar-container {
+  .main-container.show-sidebar .sidebar-container {
     align-items: start;
   }
 

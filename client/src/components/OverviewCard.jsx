@@ -19,7 +19,7 @@ const overviewCards = [
   {
     className: 'declined',
     numberOfJob: 41, // it will be dynamic later.
-    text: 'Total Jobs Applied',
+    text: 'Jobs Declined',
   },
 ];
 
