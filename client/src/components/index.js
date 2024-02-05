@@ -3,6 +3,7 @@ export { default as NavbarMobile } from './NavbarMobile';
 export { default as Header } from './Header';
 export { default as KeywordsList } from './KeywordsList';
 export { default as FormRow } from './FormRow';
+export { default as FormRowSelect } from './FormRowSelect';
 export { default as SubmitBtn } from './SubmitBtn';
 export { default as DashboardNavbarDesktop } from './DashboardNavbarDesktop';
 export { default as DashboardNavbarMobile } from './DashboardNavbarMobile';
