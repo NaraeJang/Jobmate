@@ -10,6 +10,8 @@ export { default as DashboardNavLinks } from './DashboardNavLinks';
 export { default as Sidebar } from './Sidebar';
 export { default as NavbarUser } from './NavbarUser';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as OverviewCard } from './OverviewCard';
+export { default as ChartContainer } from './ChartContainer';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
 export { default as SymbolLogo } from './SymbolLogo';

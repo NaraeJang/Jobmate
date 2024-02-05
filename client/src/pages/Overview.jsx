@@ -1,4 +1,12 @@
+import Wrapper from '../assets/wrappers/Overview';
+import { ChartContainer, OverviewCard } from '../components';
+
 const Overview = () => {
-  return <div>Overview</div>;
+  return (
+    <Wrapper>
+      <OverviewCard />
+      <ChartContainer />
+    </Wrapper>
+  );
 };
 export default Overview;

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  .dashboard {
-    display: grid;
-    grid-template-columns: auto 1fr;
+  @media (min-width: 769px) {
+    .dashboard {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
   }
 `;
 
