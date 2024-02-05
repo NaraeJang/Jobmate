@@ -475,6 +475,6 @@ textarea:focus {
   border-color: var(--job-status-interview-dark);
 }
 .declined {
-  background: #ffeeee;
+  background: #f9e7ff;
   border-color: var(--job-status-declined-dark);
 }
