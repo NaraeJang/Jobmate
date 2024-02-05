@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { dashboardLinks } from '../utils/pageData';
 import Wrapper from '../assets/wrappers/DashboardNavLinks';
+import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavLinks = ({ linksRef }) => {
+  const { showMobileLinks, toggleMobileLinks } = useDashboardContext();
   return (
     <Wrapper>
       <ul className="links" ref={linksRef}>
@@ -11,7 +13,7 @@ const DashboardNavLinks = ({ linksRef }) => {
 
           return (
             <li key={index}>
-              <NavLink to={path} end>
+              <NavLink to={path} onClick={toggleMobileLinks} end>
                 <div className="icon">{icon}</div>
                 <span>{text}</span>
               </NavLink>

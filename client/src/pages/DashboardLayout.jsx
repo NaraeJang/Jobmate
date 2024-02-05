@@ -16,6 +16,11 @@ const DashboardLayout = () => {
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [showMobileLinks, setShowMobileLinks] = useState(false);
+
+  const toggleMobileLinks = () => {
+    setShowMobileLinks(!showMobileLinks);
+  };
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -26,7 +31,14 @@ const DashboardLayout = () => {
 
   return (
     <DashboardContext.Provider
-      value={{ showSidebar, isDarkTheme, toggleSidebar, toggleDarkTheme }}>
+      value={{
+        showSidebar,
+        isDarkTheme,
+        showMobileLinks,
+        toggleSidebar,
+        toggleDarkTheme,
+        toggleMobileLinks,
+      }}>
       <Wrapper>
         <DashboardNavbarMobile />
         <main className="dashboard">

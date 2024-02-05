@@ -4,24 +4,21 @@ import { Logo } from '.';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarUser, ThemeToggle, DashboardNavLinks } from '.';
+import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavbarMobile = () => {
-  const [showLinks, setShowLinks] = useState(false);
+  const { showMobileLinks, toggleMobileLinks } = useDashboardContext();
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
 
-  const toggleLinks = () => {
-    setShowLinks(!showLinks);
-  };
-
   const linksStyle = {
-    height: showLinks
+    height: showMobileLinks
       ? `${linksRef.current.getBoundingClientRect().height}px`
       : `0px`,
   };
   const containerOpen = {
-    boxShadow: showLinks ? `var(--shadow-4)` : `none`,
-    borderRadius: showLinks ? `0 0 12px 12px` : `0`,
+    boxShadow: showMobileLinks ? `var(--shadow-4)` : `none`,
+    borderRadius: showMobileLinks ? `0 0 12px 12px` : `0`,
   };
 
   return (
@@ -30,10 +27,12 @@ const DashboardNavbarMobile = () => {
         <div
           className="nav-header"
           style={{
-            borderBottom: showLinks ? '1px solid var(--grey-200)' : 'none',
+            borderBottom: showMobileLinks
+              ? '1px solid var(--grey-200)'
+              : 'none',
           }}>
           <div className="toggle-container">
-            <button className="nav-toggle" onClick={toggleLinks}>
+            <button className="nav-toggle" onClick={toggleMobileLinks}>
               <RxHamburgerMenu />
             </button>
             <div className="mobile-header-spacer"> </div>
