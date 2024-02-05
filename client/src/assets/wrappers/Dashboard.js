@@ -7,6 +7,7 @@ const Wrapper = styled.section`
       grid-template-columns: auto 1fr; */
 
       margin-left: 8.5rem;
+      transition: var(--transition);
     }
 
     .open-sidebar + .dashboard-container {
