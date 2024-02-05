@@ -10,7 +10,7 @@ const Wrapper = styled.section`
     }
 
     .open-sidebar + .dashboard-container {
-      margin-left: 12rem; /* Updated margin when .show-sidebar is present */
+      margin-left: 13rem; /* Updated margin when .show-sidebar is present */
     }
   }
 `;
