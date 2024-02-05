@@ -10,6 +10,11 @@ const Wrapper = styled.section`
       transition: var(--transition);
     }
 
+    .dashboard-page {
+      height: calc(100vh - (min(5rem, 5vh)));
+      height: calc(100svh -(min(5rem, 5vh)));
+    }
+
     .open-sidebar + .dashboard-container {
       margin-left: 13rem; /* Updated margin when .show-sidebar is present */
     }
