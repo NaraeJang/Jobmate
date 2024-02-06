@@ -19,6 +19,8 @@ const DashboardLayout = () => {
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const [jobStatus, setJobStatus] = useState('');
   const [jobType, setJobType] = useState('');
+  const [jobStatusFilter, setJobStatusFilter] = useState('');
+  const [jobTypeFilter, setJobTypeFilter] = useState('');
 
   const toggleMobileLinks = () => {
     setShowMobileLinks(!showMobileLinks);
@@ -39,11 +41,15 @@ const DashboardLayout = () => {
         showMobileLinks,
         jobStatus,
         jobType,
+        jobStatusFilter,
+        jobTypeFilter,
         toggleSidebar,
         toggleDarkTheme,
         toggleMobileLinks,
         setJobStatus,
         setJobType,
+        setJobStatusFilter,
+        setJobTypeFilter,
       }}>
       <Wrapper>
         <DashboardNavbarMobile />

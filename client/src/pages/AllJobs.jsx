@@ -1,4 +1,13 @@
+import Wrapper from '../assets/wrappers/AllJobs';
+import { JobsContainer, SearchContainer } from '../components';
+import { useDashboardContext } from './DashboardLayout';
+
 const AllJobs = () => {
-  return <div>AllJobs</div>;
+  return (
+    <Wrapper>
+      <SearchContainer />
+      <JobsContainer />
+    </Wrapper>
+  );
 };
 export default AllJobs;
