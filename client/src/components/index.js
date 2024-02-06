@@ -16,6 +16,7 @@ export { default as OverviewCard } from './OverviewCard';
 export { default as ChartContainer } from './ChartContainer';
 export { default as JobsContainer } from './JobsContainer';
 export { default as SearchContainer } from './SearchContainer';
+export { default as JobCard } from './JobCard';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
 export { default as SymbolLogo } from './SymbolLogo';
