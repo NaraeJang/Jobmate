@@ -3,15 +3,19 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   h4 {
     font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
   }
 
   .heading {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
   }
 
   #sort {
+    align-self: flex-end;
     width: 10rem;
     padding: 0.25rem;
 
@@ -69,6 +73,14 @@ const Wrapper = styled.div`
 
   .sort-item:hover {
     background: var(--primary-50, #fde8ee);
+  }
+
+  @media screen and (min-width: 769px) {
+    .heading {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
+    }
   }
 `;
 
