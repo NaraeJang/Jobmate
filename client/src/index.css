@@ -77,7 +77,7 @@ html {
 
   /* job status colors */
   --job-status-pending-light: #fff9e6;
-  --job-status-pending-dark: ##f4c637;
+  --job-status-pending-dark: #f4c637;
   --job-status-interview-light: #e7eeff;
   --job-status-interview-dark: #3370f3;
   --job-status-declined-light: #f9e7ff;
@@ -462,22 +462,24 @@ select:focus {
   border-radius: var(--border-radius-desktop);
   padding: 0.375rem 0.75rem;
   display: inline;
+  width: fit-content;
 
   color: var(--grey-800);
   font-size: var(--small-text);
   text-transform: capitalize;
+  line-height: 100%;
 }
 
 .pending {
   background: var(--job-status-pending-light);
-  border-color: var(--job-status-pending-dark);
+  border-color: var(--job-status-pending-dark, #f4c637);
 }
 
 .interview {
   background: #e0e8f9;
-  border-color: var(--job-status-interview-dark);
+  border-color: var(--job-status-interview-dark, #3370f3);
 }
 .declined {
   background: #f9e7ff;
-  border-color: var(--job-status-declined-dark);
+  border-color: var(--job-status-declined-dark, #bc31ea);
 }

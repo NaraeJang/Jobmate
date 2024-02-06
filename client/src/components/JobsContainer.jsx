@@ -2,6 +2,8 @@ import Wrapper from '../assets/wrappers/JobsContainer';
 import { BiSortAlt2 } from 'react-icons/bi';
 import { JOB_SORT_BY } from '../../utils/constants';
 import { useState } from 'react';
+import JobCard from './JobCard';
+import mockData from '../../utils/mockData.json';
 
 const JobsContainer = () => {
   const [isActive, setIsActive] = useState(false);
@@ -35,6 +37,11 @@ const JobsContainer = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className="jobs">
+        {mockData.map((job) => {
+          return <JobCard key={job.length} {...job} />;
+        })}
       </div>
     </Wrapper>
   );

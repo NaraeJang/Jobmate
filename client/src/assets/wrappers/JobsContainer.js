@@ -75,11 +75,24 @@ const Wrapper = styled.div`
     background: var(--primary-50, #fde8ee);
   }
 
+  .jobs {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
   @media screen and (min-width: 769px) {
     .heading {
       flex-direction: row;
       justify-content: space-between;
       align-items: end;
+    }
+  }
+
+  @media (min-width: 1120px) {
+    .jobs {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
   }
 `;
