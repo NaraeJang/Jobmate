@@ -17,6 +17,8 @@ const DashboardLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [showMobileLinks, setShowMobileLinks] = useState(false);
+  const [jobStatus, setJobStatus] = useState('');
+  const [jobType, setJobType] = useState('');
 
   const toggleMobileLinks = () => {
     setShowMobileLinks(!showMobileLinks);
@@ -35,9 +37,13 @@ const DashboardLayout = () => {
         showSidebar,
         isDarkTheme,
         showMobileLinks,
+        jobStatus,
+        jobType,
         toggleSidebar,
         toggleDarkTheme,
         toggleMobileLinks,
+        setJobStatus,
+        setJobType,
       }}>
       <Wrapper>
         <DashboardNavbarMobile />
