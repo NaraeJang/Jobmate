@@ -39,8 +39,8 @@ const JobsContainer = () => {
         </div>
       </div>
       <div className="jobs">
-        {mockData.map((job) => {
-          return <JobCard key={job.length} {...job} />;
+        {mockData.map((job, index) => {
+          return <JobCard key={index} {...job} />;
         })}
       </div>
     </Wrapper>
