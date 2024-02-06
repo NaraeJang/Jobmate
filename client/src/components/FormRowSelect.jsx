@@ -1,6 +1,8 @@
+import Wrapper from '../assets/wrappers/FormRowSelect';
+
 const FormRow = ({ name, labelText, list, defaultValue = '', onChange }) => {
   return (
-    <div className="form-row">
+    <Wrapper className="form-row">
       <label htmlFor={name} className="form-label">
         {labelText || name}
       </label>
@@ -18,7 +20,7 @@ const FormRow = ({ name, labelText, list, defaultValue = '', onChange }) => {
           );
         })}
       </select>
-    </div>
+    </Wrapper>
   );
 };
 export default FormRow;

@@ -390,6 +390,7 @@ button:disabled {
 .form-select,
 .form-btn {
   height: 40px;
+  padding-right: 1rem;
 }
 .form-row {
   margin-bottom: 0.5rem;
@@ -409,7 +410,8 @@ button:disabled {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: var(--primary-400);
   border-width: 1px;
   outline: none;
