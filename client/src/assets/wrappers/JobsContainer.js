@@ -79,6 +79,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;
+    margin-top: 0.75rem;
   }
 
   @media screen and (min-width: 769px) {
@@ -93,6 +94,7 @@ const Wrapper = styled.div`
     .jobs {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      margin-top: 1.25rem;
     }
   }
 `;
