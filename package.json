@@ -1,0 +1,12 @@
+{
+  "name": "jobmate",
+  "version": "1.0.0",
+  "description": "![Forks](https://img.shields.io/github/forks/NaraeJang/Jobmate) ![Stars](https://img.shields.io/github/stars/NaraeJang/Jobmate) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
