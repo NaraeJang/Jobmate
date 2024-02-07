@@ -72,6 +72,24 @@ npm start
 - Node.js
 - Express.js
 - Mongoose
+- Bcryptjs
+- Concurrently
+- Cookie-parser
+- Dayjs
+- Dotenv
+- Express-async-error
+- Express-validator
+- Http-status-codes
+- Jsonwebtoken
+- Morgan
+- Multer
+- Nanoid
+- Nodemon
+- Cloudinary
+- Datauri
+- Helmet
+- Express-rate-limit
+- Express-mongo-sanitize
 
 ## Contributing
 
