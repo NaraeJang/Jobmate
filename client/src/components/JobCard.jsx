@@ -1,6 +1,6 @@
 import Wrapper from '../assets/wrappers/JobCard';
 import day from 'dayjs';
-import { JobCardInfo } from '.';
+import { JobCardInfo, JobCardEdit } from '.';
 
 import { useState } from 'react';
 
@@ -12,14 +12,14 @@ const JobCard = ({
   jobType,
   createdAt,
 }) => {
-  const [isEdited, setIsEdited] = useState(false);
+  const [isEdited, setIsEdited] = useState(true);
 
   const date = day(createdAt).format('MMM DD, YYYY');
 
   return (
     <Wrapper>
       {isEdited ? (
-        <h2>will work on it!</h2>
+        <JobCardEdit />
       ) : (
         <JobCardInfo
           key={company + position}

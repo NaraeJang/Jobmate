@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  h5 {
+  h5.position {
     color: var(--grey-800, #292524);
     font-family: var(--font-family-body);
     font-size: 1.5rem;

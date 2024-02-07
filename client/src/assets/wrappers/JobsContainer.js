@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  h4 {
+  h4.job-found {
     font-size: 1.5rem;
     text-align: left;
     margin-bottom: 0.5rem;

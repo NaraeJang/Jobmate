@@ -18,6 +18,7 @@ export { default as JobsContainer } from './JobsContainer';
 export { default as SearchContainer } from './SearchContainer';
 export { default as JobCard } from './JobCard';
 export { default as JobCardInfo } from './JobCardInfo';
+export { default as JobCardEdit } from './JobCardEdit';
 export { default as JobInfo } from './JobInfo';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';

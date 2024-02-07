@@ -26,7 +26,7 @@ const JobCardInfo = ({ props }) => {
       <header>
         <div className="heading">
           <div className={`job-pill ${jobStatus}`}>{jobStatus}</div>
-          <h5>{position}</h5>
+          <h5 className="position">{position}</h5>
         </div>
         <p>{company}</p>
       </header>

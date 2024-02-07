@@ -12,7 +12,7 @@ const JobsContainer = () => {
   return (
     <Wrapper>
       <div className="heading">
-        <h4>99 Jobs Found</h4>
+        <h4 className="job-found">99 Jobs Found</h4>
         <div id="sort">
           <div className="sort-btn" onClick={() => setIsActive(!isActive)}>
             <p>Sort by: {selected ? selected : 'newest'}</p>
