@@ -4,9 +4,11 @@ import { Form } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
-const JobCardEdit = () => {
+const JobCardEdit = ({ props }) => {
   const { jobStatus, setJobStatus, jobType, setJobType } =
     useDashboardContext();
+
+  const { setIsEdited } = props;
 
   return (
     <Wrapper>
@@ -29,7 +31,15 @@ const JobCardEdit = () => {
             dropdownType={setJobType}
             dropdownItem={jobType}
           />
-          <SubmitBtn text="Add Applied Job" submitting="Creating..." />
+          <div className="btn-container">
+            <SubmitBtn text="Edit Job" submitting="Editing..." />
+            <button
+              type="button "
+              className="btn btn-text btn-cancel  btn-small"
+              onClick={() => setIsEdited(false)}>
+              Cancel
+            </button>
+          </div>
         </div>
       </Form>
     </Wrapper>

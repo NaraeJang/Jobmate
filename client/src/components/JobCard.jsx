@@ -12,14 +12,14 @@ const JobCard = ({
   jobType,
   createdAt,
 }) => {
-  const [isEdited, setIsEdited] = useState(true);
+  const [isEdited, setIsEdited] = useState(false);
 
   const date = day(createdAt).format('MMM DD, YYYY');
 
   return (
     <Wrapper>
       {isEdited ? (
-        <JobCardEdit />
+        <JobCardEdit props={{ setIsEdited }} />
       ) : (
         <JobCardInfo
           key={company + position}

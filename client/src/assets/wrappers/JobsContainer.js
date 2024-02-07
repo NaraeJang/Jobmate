@@ -97,6 +97,18 @@ const Wrapper = styled.div`
       margin-top: 1.25rem;
     }
   }
+
+  @media (min-width: 1860px) {
+    .jobs {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    .jobs {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
 `;
 
 export default Wrapper;
