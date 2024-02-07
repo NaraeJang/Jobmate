@@ -3,11 +3,11 @@ import { dashboardLinks } from '../utils/pageData';
 import Wrapper from '../assets/wrappers/DashboardNavLinks';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
-const DashboardNavLinks = ({ linksRef }) => {
+const DashboardNavLinks = () => {
   const { showMobileLinks, toggleMobileLinks } = useDashboardContext();
   return (
     <Wrapper>
-      <ul className="links" ref={linksRef}>
+      <ul className="links">
         {dashboardLinks.map((link, index) => {
           const { text, path, icon } = link;
 

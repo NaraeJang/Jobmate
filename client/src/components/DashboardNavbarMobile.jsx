@@ -54,12 +54,13 @@ const DashboardNavbarMobile = () => {
           className="links-container"
           ref={linksContainerRef}
           style={linksStyle}>
-          <DashboardNavLinks linksRef={linksRef} />
-          <div className="logout-container">
-            <button type="button" className="logout" onClick={logoutUser}>
-              <FiLogOut />
-              <p>Log Out</p>
-            </button>
+          <div ref={linksRef} className="links-content">
+            <DashboardNavLinks />
+            <div className="logout-container">
+              <button type="button" className="logout" onClick={logoutUser}>
+                <p>Log Out</p>
+              </button>
+            </div>
           </div>
         </div>
       </div>

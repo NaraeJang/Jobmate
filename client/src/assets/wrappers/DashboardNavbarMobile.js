@@ -82,6 +82,13 @@ const Wrapper = styled.div`
   li:last-child {
     margin-bottom: 1.5rem;
   }
+  .links-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .dark-mode__user {
     display: flex;
@@ -89,6 +96,30 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.125rem;
+  }
+
+  .logout-container {
+    border-top: 1px solid var(--grey-200);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--grey-500);
+    text-decoration: none;
+    font-size: 1rem;
+
+    cursor: pointer;
+    transition: var(--transition);
+
+    border: none;
+    background: transparent;
+    padding: 1rem 0;
   }
 
   @media (min-width: 769px) {
