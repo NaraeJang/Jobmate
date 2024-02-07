@@ -119,6 +119,9 @@ const Wrapper = styled.aside`
 
     cursor: pointer;
     transition: var(--transition);
+
+    border: none;
+    background: transparent;
   }
 
   .logout svg {
@@ -134,6 +137,7 @@ const Wrapper = styled.aside`
   .logout:hover svg {
     color: var(--primary-500, #ee1d52);
   }
+
   @media (max-width: 768px) {
     display: none;
   }

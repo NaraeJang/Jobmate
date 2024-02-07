@@ -14,6 +14,8 @@ const DashboardLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
 
+  const user = { name: 'john' }; // temp
+
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [showMobileLinks, setShowMobileLinks] = useState(false);
@@ -33,6 +35,10 @@ const DashboardLayout = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
+  const logoutUser = async () => {
+    console.log(`logout user`);
+  };
+
   return (
     <DashboardContext.Provider
       value={{
@@ -50,6 +56,7 @@ const DashboardLayout = () => {
         setJobType,
         setJobStatusFilter,
         setJobTypeFilter,
+        logoutUser,
       }}>
       <Wrapper>
         <DashboardNavbarMobile />

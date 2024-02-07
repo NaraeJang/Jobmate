@@ -11,6 +11,7 @@ import {
   AllJobs,
   Profile,
   Error,
+  Admin,
 } from './pages';
 
 const router = createBrowserRouter([
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: 'add-job', element: <AddJob /> },
       { path: 'all-jobs', element: <AllJobs /> },
       { path: 'profile', element: <Profile /> },
+      { path: 'admin', element: <Admin /> },
     ],
   },
 ]);

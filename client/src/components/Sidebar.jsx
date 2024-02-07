@@ -1,12 +1,11 @@
 import Wrapper from '../assets/wrappers/Sidebar';
 import { useDashboardContext } from '../pages/DashboardLayout';
 import { DashboardNavLinks, Logo } from './';
-import { Link } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 const Sidebar = () => {
-  const { showSidebar, toggleSidebar } = useDashboardContext();
+  const { showSidebar, toggleSidebar, logoutUser } = useDashboardContext();
 
   return (
     <Wrapper className={showSidebar ? `open-sidebar` : ''}>
@@ -24,10 +23,10 @@ const Sidebar = () => {
           <div className="content">
             <DashboardNavLinks />
           </div>
-          <Link className="logout" to="/">
+          <button type="button" className="logout" onClick={logoutUser}>
             <FiLogOut />
             <p>Log Out</p>
-          </Link>
+          </button>
         </div>
       </div>
     </Wrapper>

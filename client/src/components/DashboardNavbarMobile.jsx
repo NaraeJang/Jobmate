@@ -1,5 +1,6 @@
 import Wrapper from '../assets/wrappers/DashboardNavbarMobile';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import { FiLogOut } from 'react-icons/fi';
 import { Logo } from '.';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,8 @@ import { NavbarUser, ThemeToggle, DashboardNavLinks } from '.';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavbarMobile = () => {
-  const { showMobileLinks, toggleMobileLinks } = useDashboardContext();
+  const { showMobileLinks, toggleMobileLinks, logoutUser } =
+    useDashboardContext();
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
 
@@ -53,6 +55,12 @@ const DashboardNavbarMobile = () => {
           ref={linksContainerRef}
           style={linksStyle}>
           <DashboardNavLinks linksRef={linksRef} />
+          <div className="logout-container">
+            <button type="button" className="logout" onClick={logoutUser}>
+              <FiLogOut />
+              <p>Log Out</p>
+            </button>
+          </div>
         </div>
       </div>
     </Wrapper>

@@ -10,4 +10,5 @@ export { default as AllJobs } from './AllJobs';
 export { default as Profile } from './Profile';
 export { default as DeleteJob } from './DeleteJob';
 export { default as EditJob } from './EditJob';
+export { default as Admin } from './Admin';
 export { default as Error } from './Error';
