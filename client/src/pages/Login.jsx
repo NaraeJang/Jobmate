@@ -17,8 +17,8 @@ const Login = () => {
         </Link>
         <h4>Hi there! Have we met before?</h4>
         <div className="input-container">
-          <FormRow type="email" name="email" labelText="email *" />
-          <FormRow type="password" name="password" labelText="Password *" />
+          <FormRow type="email" name="email" labelText="email" />
+          <FormRow type="password" name="password" labelText="Password" />
         </div>
         <div className="btn-container">
           <SubmitBtn text="Log In" submitting="Logging In..." />
