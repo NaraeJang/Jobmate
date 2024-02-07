@@ -10,6 +10,13 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const DashboardContext = createContext();
 
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  document.body.classList.toggle('dark-theme', isDarkTheme);
+
+  return isDarkTheme;
+};
+
 const DashboardLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
@@ -17,7 +24,7 @@ const DashboardLayout = () => {
   const user = { name: 'john' }; // temp
 
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const [jobStatus, setJobStatus] = useState('');
   const [jobType, setJobType] = useState('');
@@ -32,7 +39,10 @@ const DashboardLayout = () => {
     setShowSidebar(!showSidebar);
   };
   const toggleDarkTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+    document.body.classList.toggle('dark-theme', newDarkTheme);
+    localStorage.setItem('darkTheme', newDarkTheme);
   };
 
   const logoutUser = async () => {
