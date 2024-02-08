@@ -1,13 +1,5 @@
 import Job from '../models/JobModel.js';
 
-import { nanoid } from 'nanoid';
-
-// temp
-let jobs = [
-  { id: nanoid(), company: 'apple', position: 'front-end' },
-  { id: nanoid(), company: 'facebook', position: 'back-end' },
-];
-
 // GET ALL JOBS
 export const getAllJobs = async (req, res) => {
   const jobs = await Job.find({});
@@ -38,36 +30,25 @@ export const getJob = async (req, res) => {
 
 // EDIT JOB
 export const updateJob = async (req, res) => {
-  const { company, position } = req.body;
-  if (!company || !position) {
-    return res.status(404).json({ msg: `Please provide company and position` });
-  }
-
   const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const updatedJob = await Job.findByIdAndUpdate(id, req.body, { new: true });
 
-  if (!job) {
+  if (!updatedJob) {
     return res.status(404).json({ msg: `no job with id ${id}` });
   }
 
-  job.company = company;
-  job.position = position;
-
-  res.status(200).json({ msg: `job modified`, job });
+  res.status(200).json({ msg: `job modified`, job: updatedJob });
 };
 
 // DELETE JOB
 export const deleteJob = async (req, res) => {
   const { id } = req.params;
 
-  const job = jobs.find((job) => job.id === id);
+  const removedJob = await Job.findByIdAndRemove(id);
 
-  if (!job) {
+  if (!removedJob) {
     return res.status(404).json({ msg: `no job with id ${id}` });
   }
 
-  const newJobs = jobs.filter((job) => job.id !== id);
-  jobs = newJobs;
-
-  res.status(200).json({ msg: `${id} job was deleted successfully.` });
+  res.status(200).json({ msg: `job deleted`, job: removedJob });
 };
