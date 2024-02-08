@@ -9,6 +9,8 @@ import mongoose from 'mongoose';
 // CUSTOM INSTANCES.
 //router
 import jobRouter from './routes/jobRouter.js';
+// middleware
+import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -36,10 +38,7 @@ app.use('*', (req, res) => {
   res.status(404).json({ msg: `not found` });
 }); // * means we are going to apply this to all request.
 
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: `something went wrong...` });
-});
+app.use(errorHandlerMiddleware);
 
 // PORT
 const port = process.env.PORT || 5100;
