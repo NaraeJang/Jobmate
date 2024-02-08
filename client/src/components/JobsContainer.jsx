@@ -1,9 +1,9 @@
 import Wrapper from '../assets/wrappers/JobsContainer';
 import { BiSortAlt2 } from 'react-icons/bi';
-import { JOB_SORT_BY } from '../../utils/constants';
+import { JOB_SORT_BY } from '../../../utils/constants';
 import { useState } from 'react';
 import JobCard from './JobCard';
-import mockData from '../../utils/mockData.json';
+import mockData from '../../../utils/mockData.json';
 
 const JobsContainer = () => {
   const [isActive, setIsActive] = useState(false);
