@@ -22,14 +22,6 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
-app.post('/', (req, res) => {
-  //   res.send('Hello world...');
-
-  console.log(req);
-
-  res.json({ message: 'Data received', data: req.body });
-});
-
 app.use('/api/v1/jobs', jobRouter);
 
 // CUSTOMIZED NOT FOUND ERROR ROUTE.
