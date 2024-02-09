@@ -9,6 +9,8 @@ import mongoose from 'mongoose';
 // CUSTOM INSTANCES.
 //router
 import jobRouter from './routes/jobRouter.js';
+import authRouter from './routes/authRouter.js';
+
 // middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 
@@ -22,6 +24,7 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
+app.use('/', authRouter);
 app.use('/api/v1/jobs', jobRouter);
 
 // CUSTOMIZED NOT FOUND ERROR ROUTE.
