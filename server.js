@@ -24,8 +24,8 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
-app.use('/', authRouter);
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/auth', authRouter);
 
 // CUSTOMIZED NOT FOUND ERROR ROUTE.
 // we already have default not found error route that was provided by express. however, we can customize it.
