@@ -6,6 +6,7 @@ const UserSchema = await new mongoose.Schema({
     type: String,
     default: 'type your last name here',
   },
+  email: String,
   password: String,
   city: {
     type: String,
