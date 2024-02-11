@@ -31,5 +31,13 @@ export const login = async (req, res) => {
     role: findTheUser.role,
   });
 
-  res.json({ token });
+  const oneDay = 1000 * 60 * 60 * 24;
+
+  res.cookie('token', token, {
+    // httpOnly: true,
+    expires: new Date(Date.now() + oneDay),
+    // secure: process.env.NODE_ENV === 'production',
+  }); // 1st param: name, 2nd: whatever i'm getting back, 3rd: option
+
+  res.status(StatusCodes.OK).json({ msg: 'user logged in' });
 };

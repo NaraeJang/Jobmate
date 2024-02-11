@@ -2,7 +2,9 @@ import 'express-async-errors';
 import * as dotenv from 'dotenv';
 dotenv.config(); // if you don't place it on the top, it sometimes causes errors.
 import express from 'express';
+import cookieParser from 'cookie-parser';
 const app = express();
+app.use(cookieParser());
 import morgan from 'morgan'; // Provides log for our request.
 import mongoose from 'mongoose';
 
