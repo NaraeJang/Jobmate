@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import User from '../models/UserModel.js';
-import bcryptHashPassword from '../utils/passwordUtils.js';
+import { bcryptHashPassword, comparePassword } from '../utils/passwordUtils.js';
 import {
   UnauthenticatedError,
   UnauthorizedError,
@@ -21,10 +21,16 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   const findTheUser = await User.findOne({ email: req.body.email });
-  const bodyPassword = await bcryptHashPassword(req.body.password);
 
-  if (!findTheUser) throw new UnauthenticatedError();
-  if (bodyPassword !== findTheUser.password) throw new UnauthorizedError();
+  // check email
+  if (!findTheUser) throw new UnauthenticatedError('invalid credentials');
+  // check password
+  const isPasswordCorrect = await comparePassword(
+    req.body.password,
+    findTheUser.password
+  );
+  if (!isPasswordCorrect)
+    throw new UnauthorizedError('password is not matched');
 
-  res.send('good');
+  res.send('login');
 };
