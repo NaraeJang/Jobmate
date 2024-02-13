@@ -280,6 +280,10 @@ footer {
   line-height: 1rem;
 }
 
+button:focus-visible {
+  border: none;
+  outline: none;
+}
 .btn-primary {
   color: var(--white);
   background: var(--primary-500);
@@ -358,6 +362,12 @@ button:disabled {
   background: var(--green-light);
 }
 /* form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 .form {
   width: 90vw;
@@ -412,7 +422,10 @@ button:disabled {
 
 input:focus,
 textarea:focus,
-select:focus {
+select:focus,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   border-color: var(--primary-400);
   border-width: 1px;
   outline: none;

@@ -1,4 +1,10 @@
-import { Link, Form, redirect, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  Form,
+  redirect,
+  useNavigate,
+  useNavigation,
+} from 'react-router-dom';
 import Wrapper from '../assets/wrappers/LoginAndRegisterPage';
 import { Logo } from '../components';
 import { FormRow, SubmitBtn } from '../components';
@@ -12,7 +18,7 @@ const Register = () => {
         <Link to="/" className="logo">
           <Logo />
         </Link>
-        <h4>Get started with your free acount today.</h4>
+        <h4>Get started with your free account today.</h4>
         <p className="no-info">No important information required.</p>
         <div className="input-container">
           <FormRow type="text" name="name" labelText="Given Name" />

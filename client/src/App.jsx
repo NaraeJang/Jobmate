@@ -25,7 +25,15 @@ const router = createBrowserRouter([
     ],
   },
   { path: '/login', element: <Login />, errorElement: <Error /> },
-  { path: '/register', element: <Register />, errorElement: <Error /> },
+  {
+    path: '/register',
+    element: <Register />,
+    action: () => {
+      console.log('hello there');
+      return null;
+    },
+    errorElement: <Error />,
+  },
   {
     path: '/dashboard/',
     element: <DashboardLayout />,
