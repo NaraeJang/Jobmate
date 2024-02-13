@@ -1,10 +1,4 @@
-import {
-  Link,
-  Form,
-  redirect,
-  useNavigate,
-  useNavigation,
-} from 'react-router-dom';
+import { Link, Form, redirect } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/LoginAndRegisterPage';
 import { Logo } from '../components';
 import { FormRow, SubmitBtn } from '../components';
@@ -26,8 +20,6 @@ export const action = async ({ request }) => {
 };
 
 const Register = () => {
-  const navigate = useNavigate();
-
   return (
     <Wrapper>
       <Form method="post" className="form">
