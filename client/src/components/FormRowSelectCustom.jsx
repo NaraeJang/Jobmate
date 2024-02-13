@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Wrapper from '../assets/wrappers/FormRowSelectCustom';
 import { GoChevronDown, GoChevronUp } from 'react-icons/go';
 
+// new setup
 const FormRowSelectCustom = ({
   name,
   labelText,
