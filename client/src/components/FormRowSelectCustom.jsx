@@ -2,7 +2,13 @@ import { useState } from 'react';
 import Wrapper from '../assets/wrappers/FormRowSelectCustom';
 import { GoChevronDown, GoChevronUp } from 'react-icons/go';
 
-const FormRow = ({ name, labelText, list, dropdownType, dropdownItem }) => {
+const FormRowSelectCustom = ({
+  name,
+  labelText,
+  list,
+  dropdownType,
+  dropdownItem,
+}) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -16,7 +22,9 @@ const FormRow = ({ name, labelText, list, dropdownType, dropdownItem }) => {
               ? `1px solid var(--primary-400, #f14a75)`
               : `1px solid var(--grey-200, #E5E5E5)`,
           }}
-          onClick={() => setIsActive(!isActive)}>
+          onClick={() => setIsActive(!isActive)}
+          role="button"
+          tabIndex={0}>
           {dropdownItem ? dropdownItem : ` Select One`}
           {isActive ? <GoChevronUp /> : <GoChevronDown />}
         </div>
@@ -31,7 +39,9 @@ const FormRow = ({ name, labelText, list, dropdownType, dropdownItem }) => {
                   onClick={() => {
                     setIsActive(false);
                     dropdownType(item);
-                  }}>
+                  }}
+                  tabIndex={0}
+                  role="option">
                   {item}
                 </div>
               );
@@ -42,4 +52,4 @@ const FormRow = ({ name, labelText, list, dropdownType, dropdownItem }) => {
     </Wrapper>
   );
 };
-export default FormRow;
+export default FormRowSelectCustom;

@@ -17,6 +17,7 @@ import {
 //ACTIONS
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
+import { action as addJobAction } from './pages/AddJob';
 
 //LOADERS
 import { loader as dashboardLoader } from './pages/DashboardLayout';
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Overview /> },
-      { path: 'add-job', element: <AddJob /> },
+      { path: 'add-job', element: <AddJob />, action: addJobAction },
       { path: 'all-jobs', element: <AllJobs /> },
       { path: 'profile', element: <Profile /> },
       { path: 'admin', element: <Admin /> },
