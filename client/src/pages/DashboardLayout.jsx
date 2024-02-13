@@ -64,18 +64,11 @@ const DashboardLayout = () => {
   };
 
   const logoutUser = async () => {
-    try {
-      await customFetch.get('/auth/logout');
-      toast.success(`Logged out`);
+    navigate('/');
+    await customFetch.get('/auth/logout');
+    toast.success(`Logging out...`);
 
-      return navigate('/');
-    } catch (error) {
-      toast.error(
-        error?.response?.data?.msg ||
-          'Something went wrong, please try it later.'
-      );
-      return navigate('/');
-    }
+    return;
   };
 
   return (
