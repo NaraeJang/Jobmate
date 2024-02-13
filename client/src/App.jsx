@@ -14,6 +14,9 @@ import {
   Admin,
 } from './pages';
 
+//ACTIONS
+import { action as registerAction } from './pages/Register';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,10 +31,7 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register />,
-    action: () => {
-      console.log('hello there');
-      return null;
-    },
+    action: registerAction,
     errorElement: <Error />,
   },
   {
