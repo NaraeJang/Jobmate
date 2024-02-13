@@ -1,5 +1,5 @@
 import { Form } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../utils/constants';
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
 import { useDashboardContext } from '../pages/DashboardLayout';
 import Wrapper from '../assets/wrappers/SearchContainer';

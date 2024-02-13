@@ -1,7 +1,7 @@
 import Wrapper from '../assets/wrappers/JobCardEdit';
 import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
 import { Form } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../utils/constants';
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const JobCardEdit = ({ props }) => {
