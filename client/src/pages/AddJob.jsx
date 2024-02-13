@@ -6,14 +6,7 @@ import { useDashboardContext } from './DashboardLayout';
 import customFetch from '../utils/customFetch';
 
 export const action = async ({ request }) => {
-  const { user, jobStatus, jobType } = useDashboardContext();
   const formData = await request.formData();
-  const dataFromForm = Object.fromEntries(formData);
-
-  // Add jobStatus and jobType to the formData
-  formData.append('jobStatus', jobStatus);
-  formData.append('jobType', jobType);
-
   const data = Object.fromEntries(formData);
   console.log(data);
 

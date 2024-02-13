@@ -46,6 +46,19 @@ const Wrapper = styled.div`
   .dropdown-item:hover {
     background: var(--primary-50, #fde8ee);
   }
+
+  .radio {
+    display: none;
+  }
+
+  label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
 `;
 
 export default Wrapper;

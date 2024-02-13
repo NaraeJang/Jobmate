@@ -8,7 +8,7 @@ const FormRow = ({ name, labelText, list, defaultValue = '', onChange }) => {
         {labelText || name}
       </label>
       <div className="form-select-container">
-        <selectmenu
+        <select
           id={name}
           name={name}
           className="form-select"
@@ -21,7 +21,7 @@ const FormRow = ({ name, labelText, list, defaultValue = '', onChange }) => {
               </option>
             );
           })}
-        </selectmenu>
+        </select>
         <span className="icon-container">
           <GoChevronDown />
         </span>
