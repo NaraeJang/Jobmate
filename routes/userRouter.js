@@ -5,7 +5,7 @@ import {
   getCurrentUser,
   getApplicationStats,
   updateUser,
-} from '../controllers/userController';
+} from '../controllers/userController.js';
 
 router.get('/current-user', getCurrentUser);
 router.get('/admin/app-stats', getApplicationStats);
