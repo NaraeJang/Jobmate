@@ -16,6 +16,10 @@ import {
 
 //ACTIONS
 import { action as registerAction } from './pages/Register';
+import { action as loginAction } from './pages/Login';
+
+//LOADERS
+import { loader as dashboardLoader } from './pages/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +31,12 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
     ],
   },
-  { path: '/login', element: <Login />, errorElement: <Error /> },
+  {
+    path: '/login',
+    element: <Login />,
+    action: loginAction,
+    errorElement: <Error />,
+  },
   {
     path: '/register',
     element: <Register />,
@@ -37,6 +46,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard/',
     element: <DashboardLayout />,
+    loader: dashboardLoader,
     errorElement: <Error />,
     children: [
       { index: true, element: <Overview /> },

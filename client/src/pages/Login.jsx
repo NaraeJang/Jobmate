@@ -2,19 +2,39 @@ import { Link, Form, redirect, useNavigate } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/LoginAndRegisterPage';
 import { Logo } from '../components';
 import { FormRow, SubmitBtn } from '../components';
+import { toast } from 'react-toastify';
+import customFetch from '../utils/customFetch';
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+
+  try {
+    await customFetch.post('/auth/login', data);
+    toast.success('Logged successfully!');
+    return redirect('/dashboard');
+  } catch (error) {
+    toast.error(
+      error?.response?.data?.msg || 'Something went wrong, please try it later'
+    );
+    return error;
+  }
+};
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const loginDemoUser = () => {
+  const loginDemoUser = async () => {
     navigate('/dashboard');
   };
+
   return (
     <Wrapper>
       <Form method="post" className="form">
         <Link to="/" className="logo">
           <Logo />
         </Link>
+
         <h4>Hi there! Have we met before?</h4>
         <div className="input-container">
           <FormRow type="email" name="email" labelText="email" />

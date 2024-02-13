@@ -14,7 +14,9 @@ export const action = async ({ request }) => {
     toast.success('Registration successful');
     return redirect('/login');
   } catch (error) {
-    toast.error(error?.response?.data?.msg || 'something went wrong');
+    toast.error(
+      error?.response?.data?.msg || 'something went wrong, please try it later'
+    );
     return error;
   }
 };

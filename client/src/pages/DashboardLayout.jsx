@@ -1,4 +1,4 @@
-import { Outlet, useNavigation } from 'react-router-dom';
+import { Outlet, useNavigation, useLoaderData } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';
 import {
   Loading,
@@ -6,7 +6,15 @@ import {
   DashboardNavbarMobile,
   Sidebar,
 } from '../components';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import customFetch from '../utils/customFetch';
+import { toast } from 'react-toastify';
+
+export const loader = async () => {
+  const { data } = await customFetch('/users/current-user');
+
+  return data.user;
+};
 
 const DashboardContext = createContext();
 
@@ -18,10 +26,11 @@ const checkDefaultTheme = () => {
 };
 
 const DashboardLayout = () => {
+  const user = useLoaderData();
+  console.log(user);
+
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
-
-  const user = { name: 'john' }; // temp
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
@@ -46,7 +55,17 @@ const DashboardLayout = () => {
   };
 
   const logoutUser = async () => {
-    console.log(`logout user`);
+    try {
+      await customFetch.get('/auth/logout');
+      toast.success(`Logged out`);
+      return redirect('/');
+    } catch (error) {
+      toast.error(
+        error?.response?.data?.msg ||
+          'Something went wrong, please try it later.'
+      );
+      return error;
+    }
   };
 
   return (
