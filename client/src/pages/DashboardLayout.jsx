@@ -1,4 +1,10 @@
-import { Outlet, useNavigation, useLoaderData } from 'react-router-dom';
+import {
+  Outlet,
+  useNavigation,
+  useLoaderData,
+  redirect,
+  useNavigate,
+} from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';
 import {
   Loading,
@@ -11,9 +17,12 @@ import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
 export const loader = async () => {
-  const { data } = await customFetch('/users/current-user');
-
-  return data.user;
+  try {
+    const { data } = await customFetch.get('/users/current-user');
+    return data.user;
+  } catch (error) {
+    return redirect('/');
+  }
 };
 
 const DashboardContext = createContext();
@@ -27,8 +36,8 @@ const checkDefaultTheme = () => {
 
 const DashboardLayout = () => {
   const user = useLoaderData();
-  console.log(user);
 
+  const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
 
@@ -58,19 +67,21 @@ const DashboardLayout = () => {
     try {
       await customFetch.get('/auth/logout');
       toast.success(`Logged out`);
-      return redirect('/');
+
+      return navigate('/');
     } catch (error) {
       toast.error(
         error?.response?.data?.msg ||
           'Something went wrong, please try it later.'
       );
-      return error;
+      return navigate('/');
     }
   };
 
   return (
     <DashboardContext.Provider
       value={{
+        user,
         showSidebar,
         isDarkTheme,
         showMobileLinks,
