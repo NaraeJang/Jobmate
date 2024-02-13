@@ -13,3 +13,12 @@ export const authenticateUser = async (req, res, next) => {
     console.log(error);
   }
 };
+
+export const authorizePermissions = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      throw new UnauthenticatedError('Unauthorized to access this route');
+    }
+    next();
+  };
+};
