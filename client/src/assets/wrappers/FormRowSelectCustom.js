@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  position: relative;
+
   h4 {
     font-size: var(--regular-text);
     margin-bottom: 0.5rem;
@@ -9,12 +11,20 @@ const Wrapper = styled.div`
     line-height: 160%;
     letter-spacing: var(--letter-spacing);
   }
-  .dropdown-container {
-    position: relative;
-  }
 
-  .dropdown-btn {
+  #form-row-button {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.375rem 0.75rem;
+    margin: 0;
+    border-radius: var(--border-radius-box);
+    background: transparent;
+    border: 1px solid var(--grey-200);
+    color: var(--text-color);
+    font-size: var(--regular-text);
+
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
@@ -22,42 +32,45 @@ const Wrapper = styled.div`
     transition: var(--transition);
   }
 
-  .dropdown-content {
-    position: absolute;
-    top: 110%;
-    left: 0;
-    width: 100%;
-
-    background: var(--grey-50, #fafafa);
-    border-radius: 0.75rem;
+  #form-row-button:active,
+  #form-row-button:visited,
+  #form-row-button:focus,
+  #form-row-button:focus-visible {
     border: 1px solid var(--primary-400, #f14a75);
+  }
 
+  .option {
+    display: none;
+  }
+
+  .dropdown {
+    width: 100%;
+    position: absolute;
     z-index: 100;
+    top: 75px;
+    border-radius: var(--border-radius-box);
+    background: var(--grey-50, #fafafa);
+    border: 1px solid var(--primary-400, #f14a75);
+    color: var(--text-color);
+    font-size: var(--regular-text);
 
     overflow: hidden;
   }
 
-  .dropdown-item {
-    padding: 0.375rem 0.75rem;
-    cursor: pointer;
-    transition: 0.2s all;
-  }
-
-  .dropdown-item:hover {
-    background: var(--primary-50, #fde8ee);
-  }
-
-  .radio {
-    display: none;
-  }
-
   label {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+  }
+  .dropdown > label {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .dropdown > label:hover {
+    background: var(--primary-50, #fde8ee);
     cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
   }
 `;
 

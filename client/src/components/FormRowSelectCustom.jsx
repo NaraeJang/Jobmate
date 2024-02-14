@@ -7,64 +7,55 @@ const FormRowSelectCustom = ({
   name,
   labelText,
   list,
-  dropdownType,
-  dropdownItem,
+  onChange,
+  defaultValue = 'Select One',
 }) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
+  const [dynamicValue, setDynamicValue] = useState('');
 
   return (
     <Wrapper className="form-row">
-      <h4 className="form-label">{labelText || name}</h4>
-      <div className="dropdown-container">
-        <div
-          className="form-select dropdown-btn"
-          style={{
-            border: isActive
-              ? `1px solid var(--primary-400, #f14a75)`
-              : `1px solid var(--grey-200, #E5E5E5)`,
-          }}
-          tabIndex={0}>
-          <input
-            type="radio"
-            className="radio"
-            id={name}
-            name={name}
-            onClick={(e) => {
-              setIsActive(!isActive);
-              console.log(e.target.value);
-            }}
-          />
-          <label htmlFor={name}>
-            {dropdownItem ? dropdownItem : ` Select One`}
-            {isActive ? <GoChevronUp /> : <GoChevronDown />}
-          </label>
-        </div>
-        {isActive && (
-          <div className="dropdown-content">
-            {list.map((item) => {
-              return (
-                <div
-                  className="dropdown-item"
-                  key={item}
-                  value={item}
-                  tabIndex={0}
-                  role="option">
-                  <input
-                    type="radio"
-                    className="radio"
-                    id={item}
-                    name={name}
-                    onClick={() => {
-                      setIsActive(false);
-                      dropdownType(item);
-                    }}
-                  />
-                  <label htmlFor={item}>{item}</label>
-                </div>
-              );
-            })}
-          </div>
-        )}
+      <label htmlFor="form-row-button">
+        <h4 className="form-label">{labelText || name}</h4>
+      </label>
+      <button
+        type="button"
+        id="form-row-button"
+        onClick={() => {
+          setIsOpened(!isOpened);
+        }}>
+        <span>{dynamicValue || defaultValue}</span>
+        {isOpened ? <GoChevronUp /> : <GoChevronDown />}
+      </button>
+
+      <div
+        className={isOpened ? `dropdown` : `dropdown hidden`}
+        onMouseLeave={(e) => {
+          if (
+            e.target.classList.contains(`select-item`) ||
+            e.target.classList.contains(`dropdown`)
+          ) {
+            return setIsOpened(false);
+          }
+        }}>
+        {list.map((item) => {
+          return (
+            <label className="select-item" key={item} htmlFor={item}>
+              {item}
+              <input
+                className="option"
+                type="radio"
+                id={item}
+                name={name}
+                value={item}
+                onClick={(e) => {
+                  setIsOpened(false);
+                  setDynamicValue(item);
+                }}
+              />
+            </label>
+          );
+        })}
       </div>
     </Wrapper>
   );
