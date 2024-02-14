@@ -4,21 +4,16 @@ import { JobCardInfo, JobCardEdit } from '.';
 
 import { useState } from 'react';
 
-const JobCard = ({
-  company,
-  position,
-  city,
-  jobStatus,
-  jobType,
-  createdAt,
-}) => {
+const JobCard = (job) => {
+  const { company, position, city, jobStatus, jobType, createdAt } = job;
+
   const [isEdited, setIsEdited] = useState(false);
   const date = day(createdAt).format('MMM DD, YYYY');
 
   return (
     <Wrapper>
       {isEdited ? (
-        <JobCardEdit props={{ setIsEdited }} />
+        <JobCardEdit setIsEdited={setIsEdited} job={{ ...job }} />
       ) : (
         <JobCardInfo
           key={company + position}

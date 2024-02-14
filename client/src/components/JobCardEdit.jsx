@@ -4,9 +4,8 @@ import { Form } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
-const JobCardEdit = ({ props }) => {
-  const { setIsEdited } = props;
-
+const JobCardEdit = ({ setIsEdited, job }) => {
+  console.log(job);
   return (
     <Wrapper>
       <Form method="post" className="form">
