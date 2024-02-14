@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  .no-job {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.5rem;
+  }
+
   h4.job-found {
     font-size: 1.5rem;
     text-align: left;

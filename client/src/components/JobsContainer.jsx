@@ -15,7 +15,7 @@ const JobsContainer = () => {
   if (jobs.length === 0) {
     return (
       <Wrapper>
-        <h2>Please add jobs you applied...</h2>
+        <h2 className="no-job">Please add jobs you applied...</h2>
       </Wrapper>
     );
   }

@@ -5,9 +5,6 @@ import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const JobCardEdit = ({ props }) => {
-  const { jobStatus, setJobStatus, jobType, setJobType } =
-    useDashboardContext();
-
   const { setIsEdited } = props;
 
   return (

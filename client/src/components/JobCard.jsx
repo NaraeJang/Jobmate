@@ -13,7 +13,6 @@ const JobCard = ({
   createdAt,
 }) => {
   const [isEdited, setIsEdited] = useState(false);
-
   const date = day(createdAt).format('MMM DD, YYYY');
 
   return (
