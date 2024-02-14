@@ -24,7 +24,7 @@ const AllJobs = () => {
   const { data } = useLoaderData();
 
   return (
-    <AllJobsContext.Provider value={{ jobs: data }}>
+    <AllJobsContext.Provider value={{ data }}>
       <Wrapper>
         <SearchContainer />
         <JobsContainer />

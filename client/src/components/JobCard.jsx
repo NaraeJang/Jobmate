@@ -7,7 +7,7 @@ import { useState } from 'react';
 const JobCard = ({
   company,
   position,
-  jobLocation,
+  city,
   jobStatus,
   jobType,
   createdAt,
@@ -27,7 +27,7 @@ const JobCard = ({
             date,
             company,
             position,
-            jobLocation,
+            city,
             jobStatus,
             jobType,
             createdAt,

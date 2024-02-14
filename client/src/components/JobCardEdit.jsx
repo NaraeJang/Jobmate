@@ -21,15 +21,13 @@ const JobCardEdit = ({ props }) => {
             labelText="Job Status"
             name="jobStatus"
             list={Object.values(JOB_STATUS)}
-            dropdownType={setJobStatus}
-            dropdownItem={jobStatus}
+            defaultValue={JOB_STATUS.PENDING}
           />
           <FormRowSelectCustom
             labelText="job type"
             name="jobType"
             list={Object.values(JOB_TYPE)}
-            dropdownType={setJobType}
-            dropdownItem={jobType}
+            defaultValue={JOB_TYPE.FULL_TIME}
           />
           <div className="btn-container">
             <SubmitBtn text="Edit Job" submitting="Editing..." />

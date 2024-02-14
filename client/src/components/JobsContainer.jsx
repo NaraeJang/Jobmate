@@ -4,10 +4,21 @@ import { JOB_SORT_BY } from '../../../utils/constants';
 import { useState } from 'react';
 import JobCard from './JobCard';
 import mockData from '../../../utils/mockData.json';
+import { useAllJobsContext } from '../pages/AllJobs';
 
 const JobsContainer = () => {
+  const { data } = useAllJobsContext();
+  const { jobs } = data;
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState('');
+
+  if (jobs.length === 0) {
+    return (
+      <Wrapper>
+        <h2>Please add jobs you applied...</h2>
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>
@@ -39,7 +50,7 @@ const JobsContainer = () => {
         </div>
       </div>
       <div className="jobs">
-        {mockData.map((job, index) => {
+        {jobs.map((job, index) => {
           return <JobCard key={index} {...job} />;
         })}
       </div>

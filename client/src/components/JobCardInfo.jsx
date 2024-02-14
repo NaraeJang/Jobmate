@@ -14,7 +14,7 @@ const JobCardInfo = ({ props }) => {
     date,
     company,
     position,
-    jobLocation,
+    city,
     jobStatus,
     jobType,
     isEdited,
@@ -32,7 +32,7 @@ const JobCardInfo = ({ props }) => {
       </header>
       <div className="content">
         <div className="content-center">
-          <JobInfo icon={<MdLocationOn />} text={jobLocation} />
+          <JobInfo icon={<MdLocationOn />} text={city} />
           <JobInfo icon={<MdAccessTimeFilled />} text={date} />
           <JobInfo icon={<MdWork />} text={jobType} />
         </div>
