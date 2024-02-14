@@ -47,7 +47,7 @@ const Wrapper = styled.div`
     width: 100%;
     position: absolute;
     z-index: 100;
-    top: 75px;
+    top: 74.5px;
     border-radius: var(--border-radius-box);
     background: var(--grey-50, #fafafa);
     border: 1px solid var(--primary-400, #f14a75);

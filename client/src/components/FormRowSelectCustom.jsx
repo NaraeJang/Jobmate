@@ -14,13 +14,26 @@ const FormRowSelectCustom = ({
   const [dynamicValue, setDynamicValue] = useState('');
 
   return (
-    <Wrapper className="form-row">
+    <Wrapper
+      className="form-row"
+      onMouseLeave={(e) => {
+        if (
+          e.target.classList.contains(`select-item`) ||
+          e.target.classList.contains(`dropdown`) ||
+          e.target.classList.contains(`row-btn`) ||
+          e.target.classList.contains(`form-label`) ||
+          e.target.classList.contains(`form-row`)
+        ) {
+          setIsOpened(false);
+        }
+      }}>
       <label htmlFor="form-row-button">
         <h4 className="form-label">{labelText || name}</h4>
       </label>
       <button
         type="button"
         id="form-row-button"
+        className="row-btn"
         onClick={() => {
           setIsOpened(!isOpened);
         }}>
@@ -28,16 +41,7 @@ const FormRowSelectCustom = ({
         {isOpened ? <GoChevronUp /> : <GoChevronDown />}
       </button>
 
-      <div
-        className={isOpened ? `dropdown` : `dropdown hidden`}
-        onMouseLeave={(e) => {
-          if (
-            e.target.classList.contains(`select-item`) ||
-            e.target.classList.contains(`dropdown`)
-          ) {
-            setIsOpened(false);
-          }
-        }}>
+      <div className={isOpened ? `dropdown` : `dropdown hidden`}>
         {list.map((item) => {
           return (
             <label className="select-item" key={item} htmlFor={item}>
