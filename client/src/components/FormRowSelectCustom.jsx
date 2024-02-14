@@ -47,12 +47,11 @@ const FormRowSelectCustom = ({
                 type="radio"
                 name={name}
                 id={item}
-                value={item}
+                value={item || defaultValue}
                 onClick={() => {
                   setIsOpened(false);
                   setDynamicValue(item);
                 }}
-                required="required"
               />
             </label>
           );
