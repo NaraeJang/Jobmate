@@ -1,17 +1,11 @@
 import { Form } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
-import { useDashboardContext } from '../pages/DashboardLayout';
 import Wrapper from '../assets/wrappers/SearchContainer';
 
 const SearchContainer = () => {
-  const {
-    jobStatusFilter,
-    setJobStatusFilter,
-    jobTypeFilter,
-    setJobTypeFilter,
-  } = useDashboardContext();
-
+  const jobStatusList = ['pending', 'interview', 'declined'];
+  const jobTypeList = ['full-time', 'part-time', 'internship'];
   return (
     <Wrapper>
       <Form method="post" className="form">
@@ -20,17 +14,15 @@ const SearchContainer = () => {
             <FormRow type="text" name="position" />
             <FormRowSelectCustom
               labelText="Job Status"
-              name="jobStatus"
-              list={Object.values(JOB_STATUS)}
-              dropdownType={setJobStatusFilter}
-              dropdownItem={jobStatusFilter}
+              name="editJobStatus"
+              list={jobStatusList}
+              edit="edit"
             />
             <FormRowSelectCustom
               labelText="job type"
-              name="jobType"
-              list={Object.values(JOB_TYPE)}
-              dropdownType={setJobTypeFilter}
-              dropdownItem={jobTypeFilter}
+              name="editJobType"
+              list={jobTypeList}
+              edit="edit"
             />
           </div>
           <SubmitBtn text="See all Jobs" submitting="Searching..." />

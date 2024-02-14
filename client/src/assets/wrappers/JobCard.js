@@ -13,6 +13,10 @@ const Wrapper = styled.article`
   @media screen and (min-width: 769px) {
     border-radius: var(--border-radius-desktop);
   }
+
+  .dropdown {
+    background-color: var(--grey-100, #f5f5f5);
+  }
 `;
 
 export default Wrapper;

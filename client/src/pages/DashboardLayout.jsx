@@ -44,6 +44,8 @@ const DashboardLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
   const [showMobileLinks, setShowMobileLinks] = useState(false);
+  const [jobStatus, setJobStatus] = useState('');
+  const [jobType, setJobType] = useState('');
   const [jobStatusFilter, setJobStatusFilter] = useState('');
   const [jobTypeFilter, setJobTypeFilter] = useState('');
 
@@ -76,11 +78,15 @@ const DashboardLayout = () => {
         showSidebar,
         isDarkTheme,
         showMobileLinks,
+        jobStatus,
+        jobType,
         jobStatusFilter,
         jobTypeFilter,
         toggleSidebar,
         toggleDarkTheme,
         toggleMobileLinks,
+        setJobStatus,
+        setJobType,
         setJobStatusFilter,
         setJobTypeFilter,
         logoutUser,

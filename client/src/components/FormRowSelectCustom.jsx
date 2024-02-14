@@ -9,6 +9,7 @@ const FormRowSelectCustom = ({
   list,
   onChange,
   defaultValue = 'Select One',
+  edit = '',
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [dynamicValue, setDynamicValue] = useState('');
@@ -27,12 +28,10 @@ const FormRowSelectCustom = ({
           setIsOpened(false);
         }
       }}>
-      <label htmlFor="form-row-button">
-        <h4 className="form-label">{labelText || name}</h4>
-      </label>
+      <h4 className="form-label">{labelText || name}</h4>
+
       <button
         type="button"
-        id="form-row-button"
         className="row-btn"
         onClick={() => {
           setIsOpened(!isOpened);
@@ -44,18 +43,19 @@ const FormRowSelectCustom = ({
       <div className={isOpened ? `dropdown` : `dropdown hidden`}>
         {list.map((item) => {
           return (
-            <label className="select-item" key={item} htmlFor={item}>
+            <label className="select-item" key={item} htmlFor={edit + item}>
               {item}
               <input
                 className="option"
                 type="radio"
-                name={name}
-                id={item}
+                name={edit + name}
+                id={edit + item}
                 value={item || defaultValue}
                 onClick={() => {
                   setIsOpened(false);
                   setDynamicValue(item);
                 }}
+                onChange={onChange}
               />
             </label>
           );

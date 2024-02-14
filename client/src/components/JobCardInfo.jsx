@@ -12,6 +12,7 @@ import {
 const JobCardInfo = ({ props }) => {
   const {
     date,
+    _id,
     company,
     position,
     city,
@@ -45,7 +46,7 @@ const JobCardInfo = ({ props }) => {
             }}>
             <MdEdit />
           </button>
-          <Form method="post">
+          <Form method="DELETE">
             <button type="submit" className="btn-icon btn-delete">
               <MdDelete />
             </button>

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     letter-spacing: var(--letter-spacing);
   }
 
-  #form-row-button {
+  .row-btn {
     width: 100%;
     height: 2.5rem;
     padding: 0.375rem 0.75rem;
@@ -32,10 +32,10 @@ const Wrapper = styled.div`
     transition: var(--transition);
   }
 
-  #form-row-button:active,
-  #form-row-button:visited,
-  #form-row-button:focus,
-  #form-row-button:focus-visible {
+  .row-btn:active,
+  .row-btn:visited,
+  .row-btn:focus,
+  .row-btn:focus-visible {
     border: 1px solid var(--primary-400, #f14a75);
   }
 

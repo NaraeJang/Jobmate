@@ -4,26 +4,35 @@ import { Form } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
+const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  return null;
+};
+
 const JobCardEdit = ({ setIsEdited, job }) => {
-  console.log(job);
+  const { _id, company, position, jobStatus, jobType, city } = job;
+
   return (
     <Wrapper>
-      <Form method="post" className="form">
+      <Form method="post" className="form" action={action}>
         <div className="form-center">
-          <FormRow type="text" name="position" />
-          <FormRow type="text" name="company" />
-          <FormRow type="text" name="city" />
+          <FormRow type="text" name="position" defaultValue={position} />
+          <FormRow type="text" name="company" defaultValue={company} />
+          <FormRow type="text" name="city" defaultValue={city} />
           <FormRowSelectCustom
             labelText="Job Status"
             name="jobStatus"
             list={Object.values(JOB_STATUS)}
-            defaultValue={JOB_STATUS.PENDING}
+            defaultValue={jobStatus}
           />
           <FormRowSelectCustom
             labelText="job type"
             name="jobType"
             list={Object.values(JOB_TYPE)}
-            defaultValue={JOB_TYPE.FULL_TIME}
+            defaultValue={jobType}
           />
           <div className="btn-container">
             <SubmitBtn text="Edit Job" submitting="Editing..." />
