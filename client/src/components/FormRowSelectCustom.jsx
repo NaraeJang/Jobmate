@@ -12,7 +12,7 @@ const FormRowSelectCustom = ({
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [dynamicValue, setDynamicValue] = useState('');
-  console.log(dynamicValue);
+
   return (
     <Wrapper className="form-row">
       <label htmlFor="form-row-button">
@@ -45,13 +45,12 @@ const FormRowSelectCustom = ({
               <input
                 className="option"
                 type="radio"
-                id={item}
                 name={name}
+                id={item}
                 value={item}
-                onClick={(e) => {
+                onClick={() => {
                   setIsOpened(false);
                   setDynamicValue(item);
-                  console.log(e);
                 }}
               />
             </label>
