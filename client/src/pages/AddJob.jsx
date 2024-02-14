@@ -20,8 +20,7 @@ export const action = async ({ request }) => {
 };
 
 const AddJob = () => {
-  const { user, jobStatus, setJobStatus, jobType, setJobType } =
-    useDashboardContext();
+  const { user } = useDashboardContext();
 
   return (
     <Wrapper>
@@ -34,13 +33,13 @@ const AddJob = () => {
             labelText="Job Status"
             name="jobStatus"
             list={Object.values(JOB_STATUS)}
-            defaultValue={JOB_STATUS.PENDING}
+            // defaultValue={JOB_STATUS.PENDING}
           />
           <FormRowSelectCustom
             labelText="job type"
             name="jobType"
             list={Object.values(JOB_TYPE)}
-            defaultValue={JOB_TYPE.FULL_TIME}
+            // defaultValue={JOB_TYPE.FULL_TIME}
           />
           <SubmitBtn text="Add Applied Job" submitting="Creating..." />
         </div>

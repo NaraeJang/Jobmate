@@ -12,7 +12,7 @@ const FormRowSelectCustom = ({
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [dynamicValue, setDynamicValue] = useState('');
-
+  console.log(dynamicValue);
   return (
     <Wrapper className="form-row">
       <label htmlFor="form-row-button">
@@ -35,7 +35,7 @@ const FormRowSelectCustom = ({
             e.target.classList.contains(`select-item`) ||
             e.target.classList.contains(`dropdown`)
           ) {
-            return setIsOpened(false);
+            setIsOpened(false);
           }
         }}>
         {list.map((item) => {
@@ -51,6 +51,7 @@ const FormRowSelectCustom = ({
                 onClick={(e) => {
                   setIsOpened(false);
                   setDynamicValue(item);
+                  console.log(e);
                 }}
               />
             </label>
