@@ -52,6 +52,7 @@ const FormRowSelectCustom = ({
                   setIsOpened(false);
                   setDynamicValue(item);
                 }}
+                required="required"
               />
             </label>
           );
