@@ -1,4 +1,7 @@
-import { UnauthenticatedError } from '../errors/customErrors.js';
+import {
+  BadRequestError,
+  UnauthenticatedError,
+} from '../errors/customErrors.js';
 import { verityJWT } from '../utils/tokenUtils.js';
 
 export const authenticateUser = async (req, res, next) => {
@@ -7,7 +10,8 @@ export const authenticateUser = async (req, res, next) => {
 
   try {
     const { userId, role } = verityJWT(token);
-    req.user = { userId, role };
+    const testUser = userId === '65ce879f80c54cf279c567c5';
+    req.user = { userId, role, testUser };
     next();
   } catch (error) {
     console.log(error);
@@ -21,4 +25,11 @@ export const authorizePermissions = (...roles) => {
     }
     next();
   };
+};
+
+export const checkForTestUser = (req, res, next) => {
+  if (req.user.testUser) {
+    throw new BadRequestError('Demo User. Read Only!');
+  }
+  next();
 };
