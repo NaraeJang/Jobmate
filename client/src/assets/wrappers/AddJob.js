@@ -9,8 +9,14 @@ const Wrapper = styled.section`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+  transform: translateY(-1rem);
+
+  h2 {
+    color: var(--grey-700);
+    font-size: 1.75rem;
+  }
 
   button {
     margin-top: 1.5rem;
@@ -19,12 +25,13 @@ const Wrapper = styled.section`
   .form {
     border-radius: 2rem;
     background: var(--grey-50, #fafafa);
+    margin: 1rem auto;
   }
 
   @media (min-width: 769px) {
     padding: min(2.5rem, 3vh) clamp(1.5rem, 3vw, 3.5rem);
     margin-top: 0;
-
+    transform: translateY(-2rem);
     .form {
       max-width: 100% !important;
     }

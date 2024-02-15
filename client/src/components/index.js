@@ -20,6 +20,7 @@ export { default as JobCard } from './JobCard';
 export { default as JobCardInfo } from './JobCardInfo';
 export { default as JobCardEdit } from './JobCardEdit';
 export { default as JobInfo } from './JobInfo';
+export { default as StatItem } from './StatItem';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
 export { default as SymbolLogo } from './SymbolLogo';
