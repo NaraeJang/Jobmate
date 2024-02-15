@@ -1,6 +1,6 @@
 import Wrapper from '../assets/wrappers/JobCardInfo';
 import { JobInfo } from '.';
-import { Form } from 'react-router-dom';
+import { Form, redirect } from 'react-router-dom';
 import {
   MdLocationOn,
   MdAccessTimeFilled,
@@ -9,9 +9,10 @@ import {
   MdDelete,
 } from 'react-icons/md';
 import { useEffect } from 'react';
+import customFetch from '../utils/customFetch';
 
 const JobCardInfo = ({ props }) => {
-  const {
+  let {
     date,
     _id,
     company,

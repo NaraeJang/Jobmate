@@ -1,10 +1,9 @@
 import Wrapper from '../assets/wrappers/JobCardEdit';
-import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
-import { Form, useNavigation } from 'react-router-dom';
+import { FormRow, FormRowSelectCustom } from '../components';
+import { Form, redirect, useNavigation } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
-import { useDashboardContext } from '../pages/DashboardLayout';
 import { toast } from 'react-toastify';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import customFetch from '../utils/customFetch';
 
 const JobCardEdit = ({ setIsEdited, job }) => {
@@ -32,7 +31,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
     try {
       await customFetch.patch(`/jobs/${_id}`, values);
       toast.success('Job edited successfully');
-      return setIsEdited(false);
+      return redirect('all-jobs');
     } catch (error) {
       toast.error(
         error?.response?.data?.msg ||
