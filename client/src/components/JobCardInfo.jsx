@@ -1,6 +1,6 @@
 import Wrapper from '../assets/wrappers/JobCardInfo';
 import { JobInfo } from '.';
-import { Form, redirect } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import {
   MdLocationOn,
   MdAccessTimeFilled,
@@ -10,8 +10,10 @@ import {
 } from 'react-icons/md';
 import { useEffect } from 'react';
 import customFetch from '../utils/customFetch';
+import { toast } from 'react-toastify';
 
 const JobCardInfo = ({ props }) => {
+  const navigate = useNavigate();
   let {
     date,
     _id,
@@ -23,6 +25,22 @@ const JobCardInfo = ({ props }) => {
     isEdited,
     setIsEdited,
   } = props;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await customFetch.delete(`/jobs/${_id}`);
+      toast.success('Job has been deleted.');
+      return navigate('.');
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error?.response?.data?.msg ||
+          'Something went wrong, please try it again.'
+      );
+      return error;
+    }
+  };
 
   return (
     <Wrapper>
@@ -48,8 +66,11 @@ const JobCardInfo = ({ props }) => {
             }}>
             <MdEdit />
           </button>
-          <Form method="DELETE">
-            <button type="submit" className="btn-icon btn-delete">
+          <Form>
+            <button
+              type="submit"
+              className="btn-icon btn-delete"
+              onClick={handleSubmit}>
               <MdDelete />
             </button>
           </Form>
