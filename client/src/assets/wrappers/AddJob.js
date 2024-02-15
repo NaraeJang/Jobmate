@@ -16,6 +16,7 @@ const Wrapper = styled.section`
   h2 {
     color: var(--grey-700);
     font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
 
   button {

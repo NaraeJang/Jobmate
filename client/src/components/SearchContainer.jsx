@@ -9,6 +9,7 @@ const SearchContainer = () => {
   return (
     <Wrapper>
       <Form method="post" className="form">
+        <h2>Search</h2>
         <div className="form-center">
           <div className="search-container">
             <FormRow type="text" name="position" edit="edit" />
@@ -27,7 +28,7 @@ const SearchContainer = () => {
               defaultValue="all"
             />
           </div>
-          <SubmitBtn text="See all Jobs" submitting="Searching..." />
+          <SubmitBtn text="Reset filter" submitting="Searching..." />
         </div>
       </Form>
     </Wrapper>

@@ -7,7 +7,11 @@ const Wrapper = styled.div`
   button {
     margin-top: 1.5rem;
   }
-
+  h2 {
+    color: var(--grey-700);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
   .form {
     border-radius: 2rem;
     background: var(--grey-50, #fafafa);
