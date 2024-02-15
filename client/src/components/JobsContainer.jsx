@@ -5,6 +5,7 @@ import { useState } from 'react';
 import JobCard from './JobCard';
 import mockData from '../../../utils/mockData.json';
 import { useAllJobsContext } from '../pages/AllJobs';
+import { useEffect } from 'react';
 
 const JobsContainer = () => {
   const { data } = useAllJobsContext();

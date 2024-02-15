@@ -1,43 +1,105 @@
 import Wrapper from '../assets/wrappers/JobCardEdit';
 import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
-import { Form } from 'react-router-dom';
+import { Form, useNavigation } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { useDashboardContext } from '../pages/DashboardLayout';
-
-const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  console.log(data);
-
-  return null;
-};
+import { toast } from 'react-toastify';
+import { useState } from 'react';
+import customFetch from '../utils/customFetch';
 
 const JobCardEdit = ({ setIsEdited, job }) => {
   const { _id, company, position, jobStatus, jobType, city } = job;
 
+  const [values, setValues] = useState({
+    company: company,
+    position: position,
+    jobStatus: jobStatus,
+    jobType: jobType,
+    city: city,
+  });
+
+  console.log(values);
+
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
+
+  const handleSubmit = async (e) => {
+    if (!position || !company || !city) {
+      toast.error('Please Fill Out All Fields.');
+      return;
+    }
+
+    try {
+      await customFetch.patch(`/jobs/${_id}`, values);
+      toast.success('Job edited successfully');
+      return setIsEdited(false);
+    } catch (error) {
+      toast.error(
+        error?.response?.data?.msg ||
+          'Something went wrong, please try it again.'
+      );
+      return error;
+    }
+  };
+
+  const handleJobInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setValues((prevValues) => {
+      return {
+        ...prevValues,
+        [name]: value,
+      };
+    });
+  };
+
   return (
     <Wrapper>
-      <Form method="post" className="form" action={action}>
+      <Form method="post" className="form">
         <div className="form-center">
-          <FormRow type="text" name="position" defaultValue={position} />
-          <FormRow type="text" name="company" defaultValue={company} />
-          <FormRow type="text" name="city" defaultValue={city} />
+          <FormRow
+            type="text"
+            name="position"
+            defaultValue={position}
+            onChange={handleJobInput}
+          />
+          <FormRow
+            type="text"
+            name="company"
+            defaultValue={company}
+            onChange={handleJobInput}
+          />
+          <FormRow
+            type="text"
+            name="city"
+            defaultValue={city}
+            onChange={handleJobInput}
+          />
           <FormRowSelectCustom
             labelText="Job Status"
             name="jobStatus"
             list={Object.values(JOB_STATUS)}
             defaultValue={jobStatus}
+            onChange={handleJobInput}
           />
           <FormRowSelectCustom
             labelText="job type"
             name="jobType"
             list={Object.values(JOB_TYPE)}
             defaultValue={jobType}
+            onChange={handleJobInput}
           />
           <div className="btn-container">
-            <SubmitBtn text="Edit Job" submitting="Editing..." />
             <button
-              type="button "
+              type="submit"
+              className="btn btn-primary btn-block"
+              onClick={handleSubmit}
+              disabled={isSubmitting}>
+              {isSubmitting ? 'Editing...' : 'Edit Job'}
+            </button>
+            <button
+              type="button"
               className="btn btn-text btn-cancel  btn-small"
               onClick={() => setIsEdited(false)}>
               Cancel

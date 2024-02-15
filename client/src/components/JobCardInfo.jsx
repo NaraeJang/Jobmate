@@ -8,6 +8,7 @@ import {
   MdEdit,
   MdDelete,
 } from 'react-icons/md';
+import { useEffect } from 'react';
 
 const JobCardInfo = ({ props }) => {
   const {
