@@ -1,4 +1,10 @@
+import Wrapper from '../assets/wrappers/Loading';
+
 const Loading = () => {
-  return <div className="loading"></div>;
+  return (
+    <Wrapper>
+      <div className="loading"></div>
+    </Wrapper>
+  );
 };
 export default Loading;

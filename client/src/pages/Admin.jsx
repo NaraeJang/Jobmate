@@ -1,8 +1,8 @@
-import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
 import { useLoaderData, redirect } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 import Wrapper from '../assets/wrappers/Admin';
+import StatItem from '../components/StatItem';
 
 export const loader = async () => {
   try {
@@ -18,6 +18,11 @@ export const loader = async () => {
 const Admin = () => {
   const { users, jobs } = useLoaderData();
 
-  return <Wrapper>Admin</Wrapper>;
+  return (
+    <Wrapper>
+      <StatItem title="current users" count={users} setting="pending" />
+      <StatItem title="total jobs" count={jobs} setting="interview" />
+    </Wrapper>
+  );
 };
 export default Admin;
