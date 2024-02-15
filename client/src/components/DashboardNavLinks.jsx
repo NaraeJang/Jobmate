@@ -6,7 +6,7 @@ import { useDashboardContext } from '../pages/DashboardLayout';
 const DashboardNavLinks = () => {
   const { showMobileLinks, toggleMobileLinks, user } = useDashboardContext();
   return (
-    <Wrapper>
+    <Wrapper className="dropdown-content">
       <ul className="links">
         {dashboardLinks.map((link, index) => {
           const { text, path, icon } = link;

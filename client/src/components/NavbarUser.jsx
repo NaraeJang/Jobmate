@@ -9,9 +9,14 @@ const navbarUser = () => {
   return (
     <Wrapper>
       <Link to="profile">
-        <span>
-          <FaUserCircle />
-        </span>
+        {user.avatar ? (
+          <img src={user.avatar} alt="avatar" className="img" />
+        ) : (
+          <span>
+            <FaUserCircle />
+          </span>
+        )}
+
         <p style={{ textTransform: 'capitalize' }}>
           hi, {user.name || 'user'}!
         </p>

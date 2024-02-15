@@ -7,6 +7,7 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   justify-content: end;
+  gap: 1rem;
 
   margin: min(2.5rem, 3vh) clamp(1.5rem, 3vw, 3.5rem);
 

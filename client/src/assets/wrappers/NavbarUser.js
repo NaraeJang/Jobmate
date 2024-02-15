@@ -18,6 +18,14 @@ const Wrapper = styled.div`
     height: 2.5rem;
   }
 
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
   svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -39,6 +47,11 @@ const Wrapper = styled.div`
       opacity: 0;
       visibility: hidden;
       display: none;
+    }
+  }
+  @media (min-width: 769px) {
+    img {
+      margin-right: 1rem;
     }
   }
 `;
