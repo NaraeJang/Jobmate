@@ -11,18 +11,20 @@ const SearchContainer = () => {
       <Form method="post" className="form">
         <div className="form-center">
           <div className="search-container">
-            <FormRow type="text" name="position" />
+            <FormRow type="text" name="position" edit="edit" />
             <FormRowSelectCustom
               labelText="Job Status"
-              name="editJobStatus"
+              name="JobStatus"
               list={jobStatusList}
               edit="edit"
+              defaultValue="all"
             />
             <FormRowSelectCustom
               labelText="job type"
-              name="editJobType"
+              name="JobType"
               list={jobTypeList}
               edit="edit"
+              defaultValue="all"
             />
           </div>
           <SubmitBtn text="See all Jobs" submitting="Searching..." />

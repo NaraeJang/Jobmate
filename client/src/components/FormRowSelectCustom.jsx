@@ -43,13 +43,16 @@ const FormRowSelectCustom = ({
       <div className={isOpened ? `dropdown` : `dropdown hidden`}>
         {list.map((item) => {
           return (
-            <label className="select-item" key={item} htmlFor={edit + item}>
+            <label
+              className="select-item"
+              key={item}
+              htmlFor={edit ? edit + name : name}>
               {item}
               <input
                 className="option"
                 type="radio"
-                name={edit + name}
-                id={edit + item}
+                name={name}
+                id={edit ? edit + name : name}
                 value={item || defaultValue}
                 onClick={() => {
                   setIsOpened(false);

@@ -1,12 +1,12 @@
-const FormRow = ({ type, name, labelText, defaultValue, onChange }) => {
+const FormRow = ({ type, name, labelText, defaultValue, onChange, edit }) => {
   return (
     <div className="form-row">
-      <label htmlFor={name} className="form-label">
+      <label htmlFor={edit ? edit + name : name} className="form-label">
         {labelText || name}
       </label>
       <input
         type={type}
-        id={name}
+        id={edit ? edit + name : name}
         name={name}
         className="form-input"
         defaultValue={defaultValue || ''}

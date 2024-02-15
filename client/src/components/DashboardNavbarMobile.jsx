@@ -2,13 +2,13 @@ import Wrapper from '../assets/wrappers/DashboardNavbarMobile';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 import { Logo } from '.';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarUser, ThemeToggle, DashboardNavLinks } from '.';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavbarMobile = () => {
-  const { showMobileLinks, toggleMobileLinks, logoutUser } =
+  const { showMobileLinks, setShowMobileLinks, toggleMobileLinks, logoutUser } =
     useDashboardContext();
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
@@ -22,6 +22,10 @@ const DashboardNavbarMobile = () => {
     boxShadow: showMobileLinks ? `var(--shadow-4)` : `none`,
     borderRadius: showMobileLinks ? `0 0 12px 12px` : `0`,
   };
+
+  useEffect(() => {
+    setShowMobileLinks(false);
+  }, []);
 
   return (
     <Wrapper>

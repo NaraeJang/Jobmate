@@ -90,6 +90,7 @@ const DashboardLayout = () => {
         setJobStatusFilter,
         setJobTypeFilter,
         logoutUser,
+        setShowMobileLinks,
       }}>
       <Wrapper>
         <DashboardNavbarMobile />

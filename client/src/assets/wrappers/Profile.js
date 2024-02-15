@@ -11,11 +11,12 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  transform: translateY(-2.5rem);
+  transform: translateY(-1rem);
 
   h2 {
     color: var(--grey-700);
     font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
 
   button {
@@ -31,7 +32,7 @@ const Wrapper = styled.section`
   @media (min-width: 769px) {
     padding: min(2.5rem, 3vh) clamp(1.5rem, 3vw, 3.5rem);
     margin-top: 0;
-
+    transform: translateY(-2rem);
     .form {
       max-width: 100% !important;
     }
