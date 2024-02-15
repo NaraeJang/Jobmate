@@ -5,7 +5,12 @@ import express from 'express';
 const app = express();
 import morgan from 'morgan'; // Provides log for our request.
 import mongoose from 'mongoose';
+
+//public
 import cookieParser from 'cookie-parser';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 // CUSTOM INSTANCES.
 //router
 import jobRouter from './routes/jobRouter.js';
@@ -15,6 +20,9 @@ import userRouter from './routes/userRouter.js';
 // middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, './public')));
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
