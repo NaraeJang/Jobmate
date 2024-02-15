@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   h5.position {
     color: var(--grey-800, #292524);
     font-family: var(--font-family-body);
@@ -27,6 +32,7 @@ const Wrapper = styled.div`
   }
   .content {
     position: relative;
+    height: 100%;
   }
 
   svg {
