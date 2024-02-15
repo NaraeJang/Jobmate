@@ -4,13 +4,15 @@ import Wrapper from '../assets/wrappers/DashboardNavLinks';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavLinks = () => {
-  const { showMobileLinks, toggleMobileLinks } = useDashboardContext();
+  const { showMobileLinks, toggleMobileLinks, user } = useDashboardContext();
   return (
     <Wrapper>
       <ul className="links">
         {dashboardLinks.map((link, index) => {
           const { text, path, icon } = link;
 
+          const { role } = user;
+          if (path === 'admin' && role !== 'admin') return;
           return (
             <li key={index}>
               <NavLink to={path} onClick={toggleMobileLinks} end>

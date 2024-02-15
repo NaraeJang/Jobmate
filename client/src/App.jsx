@@ -22,7 +22,8 @@ import { action as addJobAction } from './pages/AddJob';
 //LOADERS
 import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { loader as allJobsLoader } from './pages/AllJobs';
-import { JobCardEdit } from './components';
+import { loader as adminLoader } from './pages/Admin';
+
 0;
 const router = createBrowserRouter([
   {
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
         loader: allJobsLoader,
       },
       { path: 'profile', element: <Profile /> },
-      { path: 'admin', element: <Admin /> },
+      { path: 'admin', element: <Admin />, loader: adminLoader },
     ],
   },
 ]);

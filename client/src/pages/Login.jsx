@@ -25,7 +25,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const loginDemoUser = async () => {
-    navigate('/dashboard');
+    const demoUser = { email: 'demo-user@test.com', password: 'Demouser0117' };
+    try {
+      await customFetch.post('/auth/login', demoUser);
+      toast.success('Logged in demo user account');
+      return navigate('/dashboard');
+    } catch (error) {
+      toast.error(
+        error?.response?.data?.msg ||
+          'Something went wrong, please try it later'
+      );
+      return error;
+    }
   };
 
   return (
