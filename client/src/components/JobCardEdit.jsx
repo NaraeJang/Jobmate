@@ -1,9 +1,9 @@
 import Wrapper from '../assets/wrappers/JobCardEdit';
 import { FormRow, FormRowSelectCustom } from '../components';
-import { Form, redirect, useNavigation } from 'react-router-dom';
+import { Form, useNavigation } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { toast } from 'react-toastify';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import customFetch from '../utils/customFetch';
 
 const JobCardEdit = ({ setIsEdited, job }) => {
@@ -17,12 +17,12 @@ const JobCardEdit = ({ setIsEdited, job }) => {
     city: city,
   });
 
-  console.log(values);
-
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (!position || !company || !city) {
       toast.error('Please Fill Out All Fields.');
       return;
@@ -31,7 +31,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
     try {
       await customFetch.patch(`/jobs/${_id}`, values);
       toast.success('Job edited successfully');
-      return redirect('all-jobs');
+      return navigate('.');
     } catch (error) {
       toast.error(
         error?.response?.data?.msg ||
