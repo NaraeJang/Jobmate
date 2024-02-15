@@ -66,14 +66,12 @@ const JobCardInfo = ({ props }) => {
             }}>
             <MdEdit />
           </button>
-          <Form>
-            <button
-              type="submit"
-              className="btn-icon btn-delete"
-              onClick={handleSubmit}>
-              <MdDelete />
-            </button>
-          </Form>
+          <button
+            type="button"
+            className="btn-icon btn-delete"
+            onClick={handleSubmit}>
+            <MdDelete />
+          </button>
         </footer>
       </div>
     </Wrapper>
