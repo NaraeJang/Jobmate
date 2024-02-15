@@ -41,7 +41,7 @@ const DashboardLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
 
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const [jobStatus, setJobStatus] = useState('');
