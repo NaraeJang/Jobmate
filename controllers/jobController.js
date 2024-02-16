@@ -1,5 +1,7 @@
 import Job from '../models/JobModel.js';
 import { StatusCodes } from 'http-status-codes';
+import mongoose from 'mongoose';
+import day from 'dayjs';
 
 // GET ALL JOBS
 export const getAllJobs = async (req, res) => {
@@ -38,4 +40,9 @@ export const deleteJob = async (req, res) => {
   const removedJob = await Job.findByIdAndRemove(id);
 
   res.status(StatusCodes.OK).json({ msg: `job deleted`, job: removedJob });
+};
+
+// SHOW OVERVIEW
+export const showOverview = async (req, res) => {
+  res.send('stats');
 };
