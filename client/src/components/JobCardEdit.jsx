@@ -47,6 +47,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
     const name = e.target.name;
     const value = e.target.value;
 
+    console.log(name, value);
     setValues((prevValues) => {
       return {
         ...prevValues,

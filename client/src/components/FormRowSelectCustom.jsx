@@ -46,17 +46,18 @@ const FormRowSelectCustom = ({
             <label
               className="select-item"
               key={item}
-              htmlFor={edit ? edit + name : name}>
+              htmlFor={edit ? edit + item : item}>
               {item}
               <input
                 className="option"
                 type="radio"
                 name={name}
-                id={edit ? edit + name : name}
+                id={edit ? edit + item : item}
                 value={item || defaultValue}
                 onClick={() => {
                   setIsOpened(false);
                   setDynamicValue(item);
+                  console.log(item);
                 }}
                 onChange={onChange}
               />
