@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Wrapper from '../assets/wrappers/ChartContainer';
+import { BarChart, AreaChart } from '.';
 
-const ChartContainer = () => {
+const ChartContainer = ({ data }) => {
   const [showAreaChart, setShowAreaChart] = useState(true);
 
   const chartToggle = () => {
@@ -40,6 +41,7 @@ const ChartContainer = () => {
           </button>
         </div>
       </div>
+      {showAreaChart ? <AreaChart data={data} /> : <BarChart data={data} />}
     </Wrapper>
   );
 };
