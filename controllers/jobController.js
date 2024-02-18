@@ -61,20 +61,32 @@ export const showOverview = async (req, res) => {
     declined: stats.declined || 0,
   };
 
-  let monthlyApplications = [
+  // let monthlyApplications = [
+  //   {
+  //     date: 'May 23',
+  //     count: 12,
+  //   },
+  //   {
+  //     date: 'Jun 23',
+  //     count: 9,
+  //   },
+  //   {
+  //     date: 'Jul 23',
+  //     count: 3,
+  //   },
+  // ];
+
+  let monthlyApplications = await Job.aggregate([
+    { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
     {
-      date: 'May 23',
-      count: 12,
+      $group: {
+        _id: { year: { $year: '$createdAt' }, month: { $month: '$createdAt' } },
+        count: { $sum: 1 },
+      },
     },
-    {
-      date: 'Jun 23',
-      count: 9,
-    },
-    {
-      date: 'Jul 23',
-      count: 3,
-    },
-  ];
+    { $sort: { '_id.year': -1, '_id.month': -1 } },
+    { $limit: 6 },
+  ]);
 
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications });
 };
