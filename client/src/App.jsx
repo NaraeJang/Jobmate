@@ -24,6 +24,7 @@ import { action as profileAction } from './pages/Profile';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { loader as allJobsLoader } from './pages/AllJobs';
 import { loader as adminLoader } from './pages/Admin';
+import { loader as OverviewLoader } from './pages/Overview';
 
 0;
 const router = createBrowserRouter([
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
     loader: dashboardLoader,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Overview /> },
+      { index: true, element: <Overview />, loader: OverviewLoader },
       { path: 'add-job', element: <AddJob />, action: addJobAction },
       {
         path: 'all-jobs',
