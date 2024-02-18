@@ -7,25 +7,25 @@ const OverviewCard = ({ defaultStats }) => {
   const overviewCards = [
     {
       className: 'total',
-      numberOfJob: pending + interview + declined,
+      numberOfJob: pending + interview + declined || 0,
       text: 'Total Jobs Applied',
       link: `all-jobs`,
     },
     {
       className: 'pending',
-      numberOfJob: pending,
+      numberOfJob: pending || 0,
       text: 'Pending Applications',
       link: `all-jobs`,
     },
     {
       className: 'interview',
-      numberOfJob: interview,
+      numberOfJob: interview || 0,
       text: 'Interview Scheduled',
       link: `all-jobs`,
     },
     {
       className: 'declined',
-      numberOfJob: declined,
+      numberOfJob: declined || 0,
       text: 'Jobs Declined',
       link: `all-jobs`,
     },
