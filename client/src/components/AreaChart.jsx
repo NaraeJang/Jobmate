@@ -35,7 +35,7 @@ const AreaChartComponent = ({ data }) => {
         <XAxis
           dataKey="date"
           axisLine={false}
-          padding={{ left: window.innerWidth > 769 ? 50 : 10 }}
+          padding={{ left: window.innerWidth > 769 ? 50 : 0 }}
           tickLine={false}
         />
         <YAxis
