@@ -6,9 +6,19 @@ import { createContext, useContext } from 'react';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 
-export const loader = async () => {
+const AllJobsContext = createContext();
+
+export const loader = async ({ request }) => {
   try {
-    const { data } = await customFetch('/jobs');
+    const params = Object.fromEntries([
+      ...new URL(request.url).searchParams.entries(),
+    ]);
+
+    console.log(params);
+
+    const { data } = await customFetch.get('/jobs', {
+      params,
+    });
 
     return { data };
   } catch (error) {
@@ -18,8 +28,6 @@ export const loader = async () => {
     return null;
   }
 };
-
-const AllJobsContext = createContext();
 
 const AllJobs = () => {
   const { data } = useLoaderData();

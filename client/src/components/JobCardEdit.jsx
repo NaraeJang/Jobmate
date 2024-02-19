@@ -47,7 +47,6 @@ const JobCardEdit = ({ setIsEdited, job }) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    console.log(name, value);
     setValues((prevValues) => {
       return {
         ...prevValues,
@@ -58,7 +57,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
 
   return (
     <Wrapper>
-      <Form method="post" className="form">
+      <form method="post" className="form">
         <div className="form-center">
           <FormRow
             type="text"
@@ -108,7 +107,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
             </button>
           </div>
         </div>
-      </Form>
+      </form>
     </Wrapper>
   );
 };
