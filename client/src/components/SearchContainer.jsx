@@ -4,8 +4,6 @@ import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/SearchContainer';
 
 const SearchContainer = () => {
-  const jobStatusList = ['pending', 'interview', 'declined'];
-  const jobTypeList = ['full-time', 'part-time', 'internship'];
   return (
     <Wrapper>
       <Form method="post" className="form">
@@ -16,14 +14,14 @@ const SearchContainer = () => {
             <FormRowSelectCustom
               labelText="Job Status"
               name="JobStatus"
-              list={jobStatusList}
+              list={Object.values(JOB_STATUS)}
               edit="edit"
               defaultValue="all"
             />
             <FormRowSelectCustom
               labelText="job type"
               name="JobType"
-              list={jobTypeList}
+              list={Object.values(JOB_TYPE)}
               edit="edit"
               defaultValue="all"
             />
