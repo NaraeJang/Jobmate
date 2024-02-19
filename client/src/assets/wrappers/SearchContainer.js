@@ -4,7 +4,8 @@ const Wrapper = styled.div`
   padding: 1.5rem 0;
   background: transparent;
 
-  button {
+  button,
+  a {
     margin-top: 1.5rem;
   }
   h2 {
@@ -26,7 +27,8 @@ const Wrapper = styled.div`
     background: var(--grey-50, #fafafa);
     border-radius: 2rem;
 
-    button {
+    button,
+    a {
       height: 2.5rem;
 
       display: flex;

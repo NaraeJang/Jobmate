@@ -18,14 +18,14 @@ const SearchContainer = () => {
             />
             <FormRowSelectCustom
               labelText="Job Status"
-              name="JobStatus"
+              name="jobStatus"
               list={['all', ...Object.values(JOB_STATUS)]}
               edit="edit"
               defaultValue="all"
             />
             <FormRowSelectCustom
               labelText="job type"
-              name="JobType"
+              name="jobType"
               list={['all', ...Object.values(JOB_TYPE)]}
               edit="edit"
               defaultValue="all"
@@ -34,7 +34,6 @@ const SearchContainer = () => {
           <Link to="/dashboard/all-jobs" className="btn btn-primary btn-block">
             Reset Search
           </Link>
-          <SubmitBtn text="Submit" submitting="Searching..." />
         </div>
       </Form>
     </Wrapper>
