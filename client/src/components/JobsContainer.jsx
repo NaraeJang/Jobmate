@@ -3,7 +3,6 @@ import { BiSortAlt2 } from 'react-icons/bi';
 import { JOB_SORT_BY } from '../../../utils/constants';
 import { useState } from 'react';
 import JobCard from './JobCard';
-import mockData from '../../../utils/mockData.json';
 import { useAllJobsContext } from '../pages/AllJobs';
 import { useEffect } from 'react';
 
