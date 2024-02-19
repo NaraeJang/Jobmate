@@ -15,7 +15,8 @@ const Wrapper = styled.div`
     transition: var(--transition);
   }
 
-  a {
+  a,
+  button {
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -24,6 +25,8 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     color: var(--grey-800, #292524);
+    background: transparent;
+    border: none;
   }
 
   h4 {

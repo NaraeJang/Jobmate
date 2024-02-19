@@ -1,33 +1,46 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/OverviewCard';
+import customFetch from '../utils/customFetch';
+import { handle } from 'express/lib/router';
 
 const OverviewCard = ({ defaultStats }) => {
+  const navigate = useNavigate();
   const { pending, interview, declined } = defaultStats;
+
+  const handleSubmit = async (status) => {
+    try {
+      await customFetch.get(`/jobs?jobStatus=${status}`);
+      return navigate(`./all-jobs?jobStatus=${status}`);
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
 
   const overviewCards = [
     {
       className: 'total',
       numberOfJob: pending + interview + declined || 0,
       text: 'Total Jobs Applied',
-      link: `all-jobs`,
+      link: `all`,
     },
     {
       className: 'pending',
       numberOfJob: pending || 0,
       text: 'Pending Applications',
-      link: `all-jobs`,
+      link: `pending`,
     },
     {
       className: 'interview',
       numberOfJob: interview || 0,
       text: 'Interview Scheduled',
-      link: `all-jobs`,
+      link: `interview`,
     },
     {
       className: 'declined',
       numberOfJob: declined || 0,
       text: 'Jobs Declined',
-      link: `all-jobs`,
+      link: `declined`,
     },
   ];
 
@@ -38,10 +51,10 @@ const OverviewCard = ({ defaultStats }) => {
 
         return (
           <article key={className} className={className}>
-            <Link to={link}>
+            <button type="button" onClick={() => handleSubmit(link)}>
               <h4>{numberOfJob}</h4>
               <p>{text}</p>
-            </Link>
+            </button>
           </article>
         );
       })}
