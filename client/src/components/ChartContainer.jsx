@@ -41,7 +41,9 @@ const ChartContainer = ({ data }) => {
           </button>
         </div>
       </div>
-      {showAreaChart ? <AreaChart data={data} /> : <BarChart data={data} />}
+      <div className="charts-box">
+        {showAreaChart ? <AreaChart data={data} /> : <BarChart data={data} />}
+      </div>
     </Wrapper>
   );
 };

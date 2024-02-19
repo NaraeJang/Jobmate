@@ -62,8 +62,8 @@ npm start
 - Dayjs
 - React-icons
 - React-router-dom
-- react-toastify
-- recharts
+- React-toastify
+- Recharts
 - Styled components
 - Moment.js
 

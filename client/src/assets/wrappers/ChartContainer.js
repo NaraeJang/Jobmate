@@ -5,8 +5,10 @@ const Wrapper = styled.div`
   border-radius: 1.5rem;
   background: #ededed;
   width: 100%;
-  height: max(50vh, 28rem);
-  max-height: 32rem;
+  /* height: max(50vh, 28rem);
+  max-height: 32rem; */
+  overflow: hidden;
+  margin-bottom: 2rem;
 
   .monthly-chart-header {
     display: flex;
@@ -61,10 +63,18 @@ const Wrapper = styled.div`
     color: var(--grey-800, #292524);
   }
 
+  .charts-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+  }
+
   @media (min-width: 769px) {
     margin-top: 1.25rem;
     border-radius: 2rem;
-    height: max(32rem, 50vh);
+    height: auto;
     max-height: 40rem;
 
     .monthly-chart-header {
@@ -75,6 +85,10 @@ const Wrapper = styled.div`
       gap: 1.2rem;
 
       padding: 3rem;
+    }
+
+    .charts-box {
+      padding: 0 2rem 2rem 1rem;
     }
   }
 `;

@@ -83,7 +83,7 @@ export const showOverview = async (req, res) => {
       const date = day()
         .month(month - 1)
         .year(year)
-        .format('MMM YYYY');
+        .format('MMM YY');
 
       return { date, count };
     })
