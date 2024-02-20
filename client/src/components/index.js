@@ -5,6 +5,7 @@ export { default as KeywordsList } from './KeywordsList';
 export { default as FormRow } from './FormRow';
 export { default as FormRowSelect } from './FormRowSelect';
 export { default as FormRowSelectCustom } from './FormRowSelectCustom';
+export { default as FormRowSelectCustomSearch } from './FormRowSelectCustomSearch';
 export { default as SubmitBtn } from './SubmitBtn';
 export { default as DashboardNavbarDesktop } from './DashboardNavbarDesktop';
 export { default as DashboardNavbarMobile } from './DashboardNavbarMobile';

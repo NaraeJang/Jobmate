@@ -1,11 +1,13 @@
 import { Form, Link, useSubmit } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
-import { FormRow, FormRowSelectCustom, SubmitBtn } from '../components';
+import { FormRow, FormRowSelectCustomSearch, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/SearchContainer';
 import { useAllJobsContext } from '../pages/AllJobs';
+import { useState } from 'react';
 
 const SearchContainer = () => {
   const submit = useSubmit();
+
   const { searchValues } = useAllJobsContext();
   console.log(searchValues);
   const { search, jobStatus, jobType } = searchValues;
@@ -26,21 +28,19 @@ const SearchContainer = () => {
                 submit(e.currentTarget.form);
               }}
             />
-            <FormRowSelectCustom
+            <FormRowSelectCustomSearch
               labelText="Job Status"
               name="jobStatus"
               list={['all', ...Object.values(JOB_STATUS)]}
               edit="edit"
               defaultValue={searchValues?.jobStatus || 'all'}
-              onChange={(e) => submit(e.currentTarget.form)}
             />
-            <FormRowSelectCustom
-              labelText="job type"
+            <FormRowSelectCustomSearch
+              labelText="Job Type"
               name="jobType"
               list={['all', ...Object.values(JOB_TYPE)]}
               edit="edit"
               defaultValue={searchValues?.jobType || 'all'}
-              onChange={(e) => submit(e.currentTarget.form)}
             />
           </div>
           <Link to="/dashboard/all-jobs" className="btn btn-primary btn-block">

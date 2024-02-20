@@ -1,19 +1,27 @@
 import { useState } from 'react';
 import Wrapper from '../assets/wrappers/FormRowSelectCustom';
 import { GoChevronDown, GoChevronUp } from 'react-icons/go';
+import { useSubmit } from 'react-router-dom';
 
 // new setup
 const FormRowSelectCustom = ({
   name,
   labelText,
   list,
-  onChange,
+
   defaultValue = 'Select One',
   edit = '',
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [dynamicValue, setDynamicValue] = useState('');
+  const submit = useSubmit();
 
+  let currentValue = 0;
+  function handleClick(myRadio) {
+    alert('Old value: ' + currentValue);
+    alert('New value: ' + myRadio.value);
+    currentValue = myRadio.value;
+  }
   return (
     <Wrapper
       className="form-row"
@@ -57,6 +65,11 @@ const FormRowSelectCustom = ({
                 onClick={(e) => {
                   setIsOpened(false);
                   setDynamicValue(item);
+
+                  e.preventDefault();
+                  submit(e.currentTarget.form);
+
+                  handleClick(this);
                 }}
               />
             </label>
