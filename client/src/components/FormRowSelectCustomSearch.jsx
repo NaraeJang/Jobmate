@@ -16,12 +16,6 @@ const FormRowSelectCustom = ({
   const [dynamicValue, setDynamicValue] = useState('');
   const submit = useSubmit();
 
-  let currentValue = 0;
-  function handleClick(myRadio) {
-    alert('Old value: ' + currentValue);
-    alert('New value: ' + myRadio.value);
-    currentValue = myRadio.value;
-  }
   return (
     <Wrapper
       className="form-row"
@@ -44,7 +38,7 @@ const FormRowSelectCustom = ({
         onClick={() => {
           setIsOpened(!isOpened);
         }}>
-        <span>{dynamicValue || defaultValue}</span>
+        <span>{defaultValue}</span>
         {isOpened ? <GoChevronUp /> : <GoChevronDown />}
       </button>
 
@@ -63,14 +57,14 @@ const FormRowSelectCustom = ({
                 id={edit ? edit + item : item}
                 defaultValue={item || defaultValue}
                 onClick={(e) => {
+                  e.preventDefault();
+
                   setIsOpened(false);
                   setDynamicValue(item);
 
-                  e.preventDefault();
                   submit(e.currentTarget.form);
-
-                  handleClick(this);
                 }}
+                defaultChecked={item === defaultValue ? true : false}
               />
             </label>
           );

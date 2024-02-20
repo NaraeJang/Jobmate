@@ -58,6 +58,7 @@ const FormRowSelectCustom = ({
                   setIsOpened(false);
                   setDynamicValue(item);
                 }}
+                onChange={onChange}
               />
             </label>
           );
