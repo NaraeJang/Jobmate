@@ -7,6 +7,7 @@ import { useAllJobsContext } from '../pages/AllJobs';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 import { useNavigate, useLocation } from 'react-router-dom';
+import PageBtnContainer from './PageBtnContainer';
 
 const JobsContainer = () => {
   const navigate = useNavigate();
@@ -105,6 +106,7 @@ const JobsContainer = () => {
             ))
           : jobs.map((job, index) => <JobCard key={index} {...job} />)}
       </div>
+      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 };

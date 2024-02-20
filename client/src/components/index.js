@@ -24,6 +24,7 @@ export { default as JobInfo } from './JobInfo';
 export { default as StatItem } from './StatItem';
 export { default as BarChart } from './BarChart';
 export { default as AreaChart } from './AreaChart';
+export { default as PageBtnContainer } from './PageBtnContainer';
 export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
 export { default as SymbolLogo } from './SymbolLogo';
