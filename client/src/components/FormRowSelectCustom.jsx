@@ -57,7 +57,6 @@ const FormRowSelectCustom = ({
                 onClick={() => {
                   setIsOpened(false);
                   setDynamicValue(item);
-                  console.log(item);
                 }}
                 onChange={onChange}
               />

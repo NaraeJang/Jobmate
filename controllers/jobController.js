@@ -14,16 +14,13 @@ export const getAllJobs = async (req, res) => {
   if (search) {
     queryObject.$or = [
       { position: { $regex: search, $options: 'i' } },
-      {
-        company: { $regex: search, $options: 'i' },
-      },
+      { company: { $regex: search, $options: 'i' } },
     ];
   }
 
   if (jobStatus && jobStatus !== 'all') {
     queryObject.jobStatus = jobStatus;
   }
-
   if (jobType && jobType !== 'all') {
     queryObject.jobType = jobType;
   }
@@ -40,7 +37,7 @@ export const getAllJobs = async (req, res) => {
   // setup pagination
 
   const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 12;
+  const limit = Number(req.query.limit) || 10;
   const skip = (page - 1) * limit;
 
   const jobs = await Job.find(queryObject)
@@ -50,7 +47,6 @@ export const getAllJobs = async (req, res) => {
 
   const totalJobs = await Job.countDocuments(queryObject);
   const numOfPages = Math.ceil(totalJobs / limit);
-
   res
     .status(StatusCodes.OK)
     .json({ totalJobs, numOfPages, currentPage: page, jobs });
