@@ -21,7 +21,8 @@ export const loader = async () => {
     const { data } = await customFetch.get('/users/current-user');
     return data.user;
   } catch (error) {
-    return redirect('/');
+    toast.error(error?.response?.data?.msg || `Please log in first.`);
+    return redirect('/login');
   }
 };
 
