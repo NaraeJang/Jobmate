@@ -1,13 +1,24 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useSubmit } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { FormRow, FormRowSelectCustomSearch, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/SearchContainer';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const SearchContainer = () => {
+  const submit = useSubmit();
   const { searchValues } = useAllJobsContext();
-
   const { search, jobStatus, jobType } = searchValues;
+
+  const debounce = (onChange) => {
+    let timeout;
+    return (e) => {
+      const form = e.currentTarget.form;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        onChange(form);
+      }, 700);
+    };
+  };
 
   return (
     <Wrapper>
@@ -21,9 +32,9 @@ const SearchContainer = () => {
               edit="edit"
               isRequired="false"
               defaultValue={search}
-              onChange={(e) => {
-                submit(e.currentTarget.form);
-              }}
+              onChange={debounce((form) => {
+                submit(form);
+              })}
             />
             <FormRowSelectCustomSearch
               labelText="Job Status"
@@ -36,7 +47,7 @@ const SearchContainer = () => {
               labelText="Job Type"
               name="jobType"
               list={['all', ...Object.values(JOB_TYPE)]}
-              edit="edit"
+              edit="edittwo"
               defaultValue={jobType || 'all'}
             />
           </div>
