@@ -1,6 +1,11 @@
 import Wrapper from '../assets/wrappers/JobCardEdit';
 import { FormRow, FormRowSelectCustom } from '../components';
-import { Form, useNavigate, useNavigation } from 'react-router-dom';
+import {
+  Form,
+  useLocation,
+  useNavigate,
+  useNavigation,
+} from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
@@ -8,6 +13,7 @@ import customFetch from '../utils/customFetch';
 
 const JobCardEdit = ({ setIsEdited, job }) => {
   const { _id, company, position, jobStatus, jobType, city } = job;
+  const location = useLocation();
 
   const [values, setValues] = useState({
     company: company,
@@ -33,7 +39,7 @@ const JobCardEdit = ({ setIsEdited, job }) => {
       await customFetch.patch(`/jobs/${_id}`, values);
       toast.success('Job edited successfully');
       setIsEdited(false);
-      return navigate('.');
+      return navigate(`${location.pathname}?${location.search}`);
     } catch (error) {
       toast.error(
         error?.response?.data?.msg ||
