@@ -73,10 +73,20 @@ const Wrapper = styled.div`
     color: var(--grey-500, #737373);
   }
 
+  input.sort-item {
+    display: none;
+  }
+
   .sort-item {
     padding: 0.5rem;
     cursor: pointer;
     transition: var(--transition);
+    z-index: 10000;
+    position: relative;
+  }
+
+  label {
+    display: block;
   }
 
   .sort-item:hover {

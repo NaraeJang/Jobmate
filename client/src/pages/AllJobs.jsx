@@ -4,7 +4,6 @@ import { JobsContainer, SearchContainer } from '../components';
 import customFetch from '../utils/customFetch';
 import { createContext, useContext } from 'react';
 import { toast } from 'react-toastify';
-import { useEffect } from 'react';
 
 const AllJobsContext = createContext();
 
