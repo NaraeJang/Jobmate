@@ -18,6 +18,10 @@ const Wrapper = styled.nav`
     color: var(--grey-700, #404040) !important;
   }
 
+  a.pending {
+    background: transparent;
+  }
+
   a > * {
     transition: var(--transition);
   }

@@ -4,7 +4,8 @@ import Wrapper from '../assets/wrappers/DashboardNavLinks';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const DashboardNavLinks = () => {
-  const { showMobileLinks, toggleMobileLinks, user } = useDashboardContext();
+  const { showMobileLinks, setShowMobileLinks, toggleMobileLinks, user } =
+    useDashboardContext();
   return (
     <Wrapper className="dropdown-content">
       <ul className="links">
@@ -15,7 +16,7 @@ const DashboardNavLinks = () => {
           if (path === 'admin' && role !== 'admin') return;
           return (
             <li key={index}>
-              <NavLink to={path} onClick={toggleMobileLinks} end>
+              <NavLink to={path} onClick={() => setShowMobileLinks(false)} end>
                 <div className="icon">{icon}</div>
                 <span>{text}</span>
               </NavLink>
