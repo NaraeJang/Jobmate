@@ -41,7 +41,7 @@ const DashboardNavbarMobile = () => {
             <button className="nav-toggle" onClick={toggleMobileLinks}>
               <RxHamburgerMenu />
             </button>
-            <div className="mobile-header-spacer"> </div>
+            {/* <div className="mobile-header-spacer"> </div> */}
           </div>
 
           <Link to="/dashboard" className="logo">
@@ -49,7 +49,7 @@ const DashboardNavbarMobile = () => {
           </Link>
 
           <div className="dark-mode__user">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <NavbarUser />
           </div>
         </div>

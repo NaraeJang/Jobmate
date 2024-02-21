@@ -4,7 +4,7 @@ import { NavbarUser, ThemeToggle } from '.';
 const DashboardNavbarDesktop = () => {
   return (
     <Wrapper>
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <div className="user-container">
         <NavbarUser />
       </div>
