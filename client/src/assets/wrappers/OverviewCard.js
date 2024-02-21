@@ -27,6 +27,7 @@ const Wrapper = styled.div`
     color: var(--grey-800, #292524);
     background: transparent;
     border: none;
+    cursor: pointer;
   }
 
   h4 {

@@ -51,7 +51,9 @@ const SearchContainer = () => {
               defaultValue={jobType || 'all'}
             />
           </div>
-          <Link to="/dashboard/all-jobs" className="btn btn-primary btn-block">
+          <Link
+            to="/dashboard/all-jobs"
+            className="btn btn-primary btn-block btn-reset">
             Reset Search
           </Link>
         </div>

@@ -7,7 +7,11 @@ const Wrapper = styled.div`
   button,
   a {
     margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   h2 {
     color: var(--grey-700);
     font-size: 1.75rem;
