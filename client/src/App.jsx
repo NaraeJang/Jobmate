@@ -27,6 +27,7 @@ import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { loader as allJobsLoader } from './pages/AllJobs';
 import { loader as adminLoader } from './pages/Admin';
 import { loader as OverviewLoader } from './pages/Overview';
+import { ErrorElement } from './components';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -64,12 +65,18 @@ const router = createBrowserRouter([
     loader: dashboardLoader,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Overview />, loader: OverviewLoader },
+      {
+        index: true,
+        element: <Overview />,
+        loader: OverviewLoader,
+        errorElement: <ErrorElement />,
+      },
       { path: 'add-job', element: <AddJob />, action: addJobAction },
       {
         path: 'all-jobs',
         element: <AllJobs />,
         loader: allJobsLoader,
+        errorElement: <ErrorElement />,
       },
       { path: 'profile', element: <Profile />, action: profileAction },
       { path: 'admin', element: <Admin />, loader: adminLoader },
