@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Overview />,
-        loader: OverviewLoader,
+        loader: OverviewLoader(queryClient),
         errorElement: <ErrorElement />,
       },
       { path: 'add-job', element: <AddJob />, action: addJobAction },
