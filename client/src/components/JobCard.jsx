@@ -42,6 +42,7 @@ const JobCard = (job) => {
             isEdited,
             setIsEdited,
           }}
+          queryClient={queryClient}
         />
       )}
     </Wrapper>

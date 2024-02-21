@@ -1,6 +1,6 @@
 import Wrapper from '../assets/wrappers/JobCardInfo';
 import { JobInfo } from '.';
-import { Form, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   MdLocationOn,
   MdAccessTimeFilled,
@@ -8,12 +8,12 @@ import {
   MdEdit,
   MdDelete,
 } from 'react-icons/md';
-import { useEffect } from 'react';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
-const JobCardInfo = ({ props }) => {
+const JobCardInfo = ({ props, queryClient }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   let {
     date,
     _id,
@@ -30,8 +30,9 @@ const JobCardInfo = ({ props }) => {
 
     try {
       await customFetch.delete(`/jobs/${_id}`);
+      queryClient.invalidateQueries(['jobs']);
       toast.success('Job has been deleted.');
-      return navigate('.');
+      return navigate(`${location.pathname}${location.search}`);
     } catch (error) {
       console.log(error);
       toast.error(
