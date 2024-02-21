@@ -55,42 +55,28 @@ npm start
 
 #### Front-end
 
-| Name                 | Version |
-| :------------------- | :------ |
-| Vite.js              | 5.0.8   |
-| Axios                | 1.3.6   |
-| React-router-dom     | 6.21.3  |
-| React-query          | 4.29.5  |
-| React-query-devtools | 4.29.6  |
-| React-toastify       | 10.0.4  |
-| React-icons          | 4.12.0  |
-| Styled components    | 5.3.10  |
-| Dayjs                | 1.11.7  |
-| recharts             | 2.5.0   |
+| Name                 | Version | Name              | Version |
+| :------------------- | :------ | :---------------- | :------ |
+| Vite.js              | 5.0.8   | Axios             | 1.3.6   |
+| React-router-dom     | 6.21.3  | React-query       | 4.29.5  |
+| React-query-devtools | 4.29.6  | React-toastify    | 10.0.4  |
+| React-icons          | 4.12.0  | Styled components | 5.3.10  |
+| Dayjs                | 1.11.7  | recharts          | 2.5.0   |
 
 #### Back-end
 
-- Node.js
-- Express.js
-- Mongoose
-- Bcryptjs
-- Concurrently
-- Cookie-parser
-- Dayjs
-- Dotenv
-- Express-async-error
-- Express-validator
-- Http-status-codes
-- Jsonwebtoken
-- Morgan
-- Multer
-- Nanoid
-- Nodemon
-- Cloudinary
-- Datauri
-- Helmet
-- Express-rate-limit
-- Express-mongo-sanitize
+| Name              | Version | Name                   | Version     |
+| :---------------- | :------ | :--------------------- | :---------- |
+| Nodemon           | 2.0.22  | Express.js             | 4.18.2      |
+| Mongoose          | 7.0.5   | Express-async-error    | 3.1.1       |
+| Http-status-codes | 2.2.0   | Express-validator      | 7.0.1       |
+| Bcryptjs          | 2.4.3   | Express-rate-limit     | 6.8.0       |
+| Concurrently      | 8.0.1   | Express-mongo-sanitize | 2.2.0       |
+| Cookie-parser     | 1.4.6   | Cloudinary             | 1.37.3      |
+| Dotenv            | 16.0.3  | Dayjs                  | 1.11.9      |
+| Datauri           | 4.1.0   | Jsonwebtoken           | 9.0.0       |
+| Morgan            | 1.10.0  | Multer                 | 1.4.5-lts.1 |
+| Helmet            | 7.0.0   |
 
 ## Contributing
 
