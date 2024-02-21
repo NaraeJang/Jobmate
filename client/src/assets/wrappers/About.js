@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  height: 100vh;
-  height: 100svh;
   padding-top: 4rem;
   padding-bottom: 4rem;
   text-align: left;
@@ -22,6 +20,11 @@ const Wrapper = styled.section`
   p {
     margin-bottom: 2.5rem;
     color: var(--grey-900);
+  }
+
+  @media (min-width: 769px) {
+    height: 100vh;
+    height: 100svh;
   }
 `;
 
