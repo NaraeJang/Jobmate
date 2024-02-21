@@ -11,8 +11,9 @@ import { toast } from 'react-toastify';
 import { useState } from 'react';
 import customFetch from '../utils/customFetch';
 
-const JobCardEdit = ({ setIsEdited, job }) => {
+const JobCardEdit = ({ setIsEdited, job, queryClient }) => {
   const { _id, company, position, jobStatus, jobType, city } = job;
+
   const location = useLocation();
 
   const [values, setValues] = useState({
@@ -37,9 +38,10 @@ const JobCardEdit = ({ setIsEdited, job }) => {
 
     try {
       await customFetch.patch(`/jobs/${_id}`, values);
+      queryClient.invalidateQueries(['jobs']);
       toast.success('Job edited successfully');
       setIsEdited(false);
-      return navigate(`${location.pathname}?${location.search}`);
+      return navigate(`${location.pathname}${location.search}`);
     } catch (error) {
       toast.error(
         error?.response?.data?.msg ||

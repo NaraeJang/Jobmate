@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PageBtnContainer from './PageBtnContainer';
 
-const JobsContainer = () => {
+const JobsContainer = ({ queryClient }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -102,9 +102,11 @@ const JobsContainer = () => {
       <div className="jobs">
         {handleSubmitData
           ? handleSubmitData.map((job, index) => (
-              <JobCard key={index} {...job} />
+              <JobCard key={index} {...job} queryClient={queryClient} />
             ))
-          : jobs.map((job, index) => <JobCard key={index} {...job} />)}
+          : jobs.map((job, index) => (
+              <JobCard key={index} {...job} queryClient={queryClient} />
+            ))}
       </div>
       {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>

@@ -6,13 +6,27 @@ import { useEffect } from 'react';
 
 const JobCard = (job) => {
   const [isEdited, setIsEdited] = useState(false);
-  const { _id, company, position, city, jobStatus, jobType, createdAt } = job;
+  const {
+    _id,
+    company,
+    position,
+    city,
+    jobStatus,
+    jobType,
+    createdAt,
+    queryClient,
+  } = job;
+
   const date = day(createdAt).format('MMM DD, YYYY');
 
   return (
     <Wrapper>
       {isEdited ? (
-        <JobCardEdit setIsEdited={setIsEdited} job={{ ...job }} />
+        <JobCardEdit
+          setIsEdited={setIsEdited}
+          job={{ ...job }}
+          queryClient={queryClient}
+        />
       ) : (
         <JobCardInfo
           key={_id}

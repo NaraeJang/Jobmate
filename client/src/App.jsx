@@ -78,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'all-jobs',
-        element: <AllJobs />,
+        element: <AllJobs queryClient={queryClient} />,
         loader: allJobsLoader(queryClient),
         errorElement: <ErrorElement />,
       },
