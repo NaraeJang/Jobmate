@@ -46,12 +46,15 @@ const Navbar = () => {
           style={linksStyle}>
           <ul className="links" ref={linksRef}>
             <li>
-              <NavLink to="./about">About</NavLink>
+              <NavLink to="./about" onClick={() => setShowLinks(false)}>
+                About
+              </NavLink>
             </li>
             <li>
               <Link
                 className="btn btn-primary btn-small btn-block"
-                to="./register">
+                to="./register"
+                onClick={() => setShowLinks(false)}>
                 Register
               </Link>
             </li>

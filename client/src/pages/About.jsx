@@ -1,6 +1,8 @@
+import Wrapper from '../assets/wrappers/About';
+
 const About = () => {
   return (
-    <div className="container">
+    <Wrapper className="container">
       <h4>About JobMate</h4>
       <p>
         Welcome to JobMate, a personal web development project created and owned
@@ -17,7 +19,7 @@ const About = () => {
       <h5>Ownership</h5>
       <p>
         All design and development work, including the codebase, belongs to me
-        ([Your Name]). Unauthorized use, reproduction, or distribution is not
+        Narae Jang. Unauthorized use, reproduction, or distribution is not
         permitted.
       </p>
       <h5>Data Collection</h5>
@@ -48,7 +50,7 @@ const About = () => {
         <a href="#">my portfolio website</a>. Thank you for your interest in
         JobMate and my other projects!
       </p>
-    </div>
+    </Wrapper>
   );
 };
 export default About;
