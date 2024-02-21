@@ -50,7 +50,7 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
-    action: loginAction,
+    action: loginAction(queryClient),
     errorElement: <Error />,
   },
   {
@@ -71,14 +71,22 @@ const router = createBrowserRouter([
         loader: OverviewLoader(queryClient),
         errorElement: <ErrorElement />,
       },
-      { path: 'add-job', element: <AddJob />, action: addJobAction },
+      {
+        path: 'add-job',
+        element: <AddJob />,
+        action: addJobAction(queryClient),
+      },
       {
         path: 'all-jobs',
         element: <AllJobs />,
-        loader: allJobsLoader,
+        loader: allJobsLoader(queryClient),
         errorElement: <ErrorElement />,
       },
-      { path: 'profile', element: <Profile />, action: profileAction },
+      {
+        path: 'profile',
+        element: <Profile />,
+        action: profileAction(queryClient),
+      },
       { path: 'admin', element: <Admin />, loader: adminLoader },
     ],
   },

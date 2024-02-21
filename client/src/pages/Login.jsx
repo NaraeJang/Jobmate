@@ -5,21 +5,25 @@ import { FormRow, SubmitBtn } from '../components';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
-export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+export const action =
+  (queryClient) =>
+  async ({ request }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
 
-  try {
-    await customFetch.post('/auth/login', data);
-    toast.success('Logged in successfully!');
-    return redirect('/dashboard');
-  } catch (error) {
-    toast.error(
-      error?.response?.data?.msg || 'Something went wrong, please try it later'
-    );
-    return error;
-  }
-};
+    try {
+      await customFetch.post('/auth/login', data);
+      queryClient.invalidateQueries();
+      toast.success('Logged in successfully!');
+      return redirect('/dashboard');
+    } catch (error) {
+      toast.error(
+        error?.response?.data?.msg ||
+          'Something went wrong, please try it later'
+      );
+      return error;
+    }
+  };
 
 const Login = () => {
   const navigate = useNavigate();
