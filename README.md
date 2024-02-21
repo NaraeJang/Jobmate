@@ -55,17 +55,18 @@ npm start
 
 #### Front-end
 
-- Vite.js
-- React-query
-- React-query-devtools
-- Axios
-- Dayjs
-- React-icons
-- React-router-dom
-- React-toastify
-- Recharts
-- Styled components
-- Moment.js
+| Name                 | Version |
+| :------------------- | :------ |
+| Vite.js              | 5.0.8   |
+| Axios                | 1.3.6   |
+| React-router-dom     | 6.21.3  |
+| React-query          | 4.29.5  |
+| React-query-devtools | 4.29.6  |
+| React-toastify       | 10.0.4  |
+| React-icons          | 4.12.0  |
+| Styled components    | 5.3.10  |
+| Dayjs                | 1.11.7  |
+| recharts             | 2.5.0   |
 
 #### Back-end
 
