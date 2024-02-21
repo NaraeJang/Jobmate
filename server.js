@@ -6,6 +6,8 @@ const app = express();
 import morgan from 'morgan'; // Provides log for our request.
 import mongoose from 'mongoose';
 import cloudinary from 'cloudinary';
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 
 //public
 import cookieParser from 'cookie-parser';
@@ -37,14 +39,8 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cookieParser());
 app.use(express.json()); // built-in middleware in order to send and receive json from server and front-end.
-
-app.get('/', (req, res) => {
-  res.send('Hello world');
-});
-
-app.get('/api/v1/test', (req, res) => {
-  res.json({ msg: 'test route' });
-});
+app.use(helmet());
+app.use(mongoSanitize());
 
 app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/auth', authRouter);
