@@ -26,5 +26,6 @@ export { default as BarChart } from './BarChart';
 export { default as AreaChart } from './AreaChart';
 export { default as PageBtnContainer } from './PageBtnContainer';
 export { default as Loading } from './Loading';
+export { default as ErrorElement } from './ErrorElement';
 export { default as Logo } from './Logo';
 export { default as SymbolLogo } from './SymbolLogo';

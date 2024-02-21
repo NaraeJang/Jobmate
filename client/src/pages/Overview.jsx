@@ -18,10 +18,20 @@ const Overview = () => {
   const navigate = useNavigate();
   const { defaultStats, monthlyApplications } = useLoaderData();
 
+  useEffect(() => {
+    if (monthlyApplications.length < 1) {
+      return navigate('/dashboard/add-job');
+    }
+  }, []);
+
   return (
     <Wrapper>
-      <OverviewCard defaultStats={defaultStats} />
-      <ChartContainer data={monthlyApplications} />
+      {monthlyApplications?.length > 1 && (
+        <>
+          <OverviewCard defaultStats={defaultStats} />
+          <ChartContainer data={monthlyApplications} />
+        </>
+      )}
     </Wrapper>
   );
 };
