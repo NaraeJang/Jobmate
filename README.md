@@ -28,7 +28,7 @@ To run JobMate locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/jobmate.git // Will be updated later.
+git clone https://github.com/NaraeJang/Jobmate.git
 
 # Navigate to the project directory
 cd jobmate
