@@ -90,7 +90,7 @@ To enhance the user experience, I utilized React Query for managing and caching 
 
 The most challenging aspect was seamlessly connecting data without errors. Especially on the "All Jobs" pages, various methods were employed to communicate with the server—retrieving all data, updating data, deleting data, and fetching data specific to the user's search. Managing data and making functions independent yet seamlessly interconnected were significant learning points during this project. Being my first MERN Project, it took me a month to complete, presenting a fulfilling challenge and a valuable learning experience.
 
-#### How Can It Be Improved?
+## How Can It Be Improved?
 
 It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
 
