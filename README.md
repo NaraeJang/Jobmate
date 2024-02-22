@@ -94,7 +94,8 @@ It would be amazing if the app has enough insight from the data, we can analyze 
 
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-[The MIT License (MIT)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2024 Narae Jang
+
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
 
