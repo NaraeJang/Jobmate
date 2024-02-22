@@ -1,7 +1,5 @@
 # JobMate
 
-![Forks](https://img.shields.io/github/forks/NaraeJang/Jobmate)
-![Stars](https://img.shields.io/github/stars/NaraeJang/Jobmate)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Overview
@@ -78,23 +76,23 @@ npm start
 | Morgan            | 1.10.0  | Multer                 | 1.4.5-lts.1 |
 | Helmet            | 7.0.0   |
 
-## Contributing
+## Process
 
-I welcome any and all contributions! Here are some ways you can get started:
+One of my online courses featured a similar project, and I thought it would be great to create my own based on that existing one.
 
-1. **Report bugs:** If you encounter any bugs, please let me know. Open up an issue and let me know the problem.
-2. **Contribute code:** If you are a developer and want to contribute, follow the instructions below to get started!
-3. **Suggestions:** If you don't want to code but have some awesome ideas, open up an issue explaining some updates or improvements you would like to see!
+However, I aimed to incorporate different features, functions, layouts, and designs. Therefore, I began by jotting down everything I wanted to implement in this app, contemplating ways to enhance the user experience.
 
-#### Instructions
+On the design side, I progressed from low-fidelity wireframes to high-fidelity wireframes, developed a design system, and created a simple prototype.
 
-1. Fork this repository
-2. Clone your forked repository
-3. Add your scripts
-4. Commit and push
-5. Create a pull request
-6. Star this repository
-7. Wait for pull request to merge
+In terms of development, following the design, I initiated the front-end setup, including establishing basic CSS, structuring pages using React Router DOM with mock data, and developing CSS for each page using the Styled Components library. Afterward, I delved into the back-end, setting up the server, connecting to MongoDB using Mongoose, and creating schemas, routes, controllers, and custom errors. Once both front-end and back-end were in place, I integrated them using Axios and transferred data to the MongoDB Database. I tested CRUD methods from the front-end, addressing any bugs that arose.
+
+To enhance the user experience, I utilized React Query for managing and caching data, optimizing loading times and eliminating the need to submit data each time a page is loaded.
+
+The most challenging aspect was seamlessly connecting data without errors. Especially on the "All Jobs" pages, various methods were employed to communicate with the server—retrieving all data, updating data, deleting data, and fetching data specific to the user's search. Managing data and making functions independent yet seamlessly interconnected were significant learning points during this project. Being my first MERN Project, it took me a month to complete, presenting a fulfilling challenge and a valuable learning experience.
+
+#### How Can It Be Improved?
+
+It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
 
 ## License
 
