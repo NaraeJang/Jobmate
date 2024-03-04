@@ -1,7 +1,5 @@
 # JobMate
 
-
-
 JobMate is your personalized solution for tracking job applications, crafted to simplify and streamline your job search process. With JobMate, you can efficiently manage your job applications, track the progress of each one, and stay organized throughout your career journey.
 
 #### Features
@@ -12,7 +10,12 @@ JobMate is your personalized solution for tracking job applications, crafted to 
 - **Effortless Organization:** Simplify your job search with intuitive tools.
 - **User-Friendly Interface:** Enjoy a seamless and easy-to-navigate design.
 
-## How to Use and Run the Project
+#### Live Demo
+
+This project is hosted on the free version of render.com. As a result, the initial loading time for the application may take approximately 2-3 minutes. Your patience is greatly appreciated as the necessary resources are provisioned for the first run. Thank you for understanding!
+[Go to Live Demo](https://jobmate-1gpn.onrender.com)
+
+## How to Use the Project
 
 1. **Sign Up:** Create your JobMate account to get started.
 2. **Add New Application:** Input details of each job application.
@@ -93,9 +96,9 @@ The most challenging aspect was seamlessly connecting data without errors. Espec
 It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
 
 ## License
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Copyright (c) 2024 Narae Jang
 
 [The MIT License (MIT)](https://opensource.org/licenses/MIT)
-
