@@ -12,8 +12,9 @@ JobMate is your personalized solution for tracking job applications, crafted to 
 
 #### Live Demo
 
-This project is hosted on the free version of render.com. As a result, the initial loading time for the application may take approximately 2-3 minutes. Your patience is greatly appreciated as the necessary resources are provisioned for the first run. Thank you for understanding!
 [Go to Live Demo](https://jobmate-1gpn.onrender.com)
+
+This project is hosted on the free version of render.com. As a result, the initial loading time for the application may take approximately 2-3 minutes. Your patience is greatly appreciated as the necessary resources are provisioned for the first run. Thank you for understanding!
 
 ## How to Use the Project
 
@@ -94,6 +95,12 @@ The most challenging aspect was seamlessly connecting data without errors. Espec
 ## How Can It Be Improved?
 
 It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
+
+## Introduction Video
+
+Preparing...
+
+<!-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VI...)](https://www.youtube.com/watch?v=YOUTU...) -->
 
 ## License
 

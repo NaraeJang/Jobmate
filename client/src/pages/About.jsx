@@ -24,9 +24,16 @@ const About = () => {
       </p>
       <h5>Data Collection</h5>
       <p>
-        JobMate does not collect any personal information. Your privacy and data
-        security are important, and I am committed to maintaining a secure and
-        confidential user experience.
+        JobMate collects minimal personal information, including your name,
+        email, and job location, solely for the purpose of enhancing your
+        application experience. This data is used exclusively within the
+        application and is not shared or used for any unauthorized purposes.
+        Your privacy and data security are of utmost importance, and JobMate is
+        committed to providing a secure and confidential user experience.
+        <br />
+        Additionally, for users concerned about privacy, please note that you
+        have the option to provide fake or anonymized information when using
+        JobMate.
       </p>
       <h4>Application Usage</h4>
       <h5>For Job Hunting</h5>
@@ -38,9 +45,14 @@ const About = () => {
       <h5>Data Persistence</h5>
       <p>
         While JobMate is available for your current and future job hunting
-        needs, please note that data persistence is not guaranteed in the long
-        term. Consider using the application for its intended purpose during
-        your job search.
+        needs, please be aware that inappropriate information or usage will not
+        be tolerated. In the event of any violation of usage policies, including
+        the submission of inappropriate content, JobMate reserves the right to
+        delete user accounts without prior notification.
+      </p>
+      <p>
+        Your cooperation in maintaining a respectful and positive community
+        within JobMate is appreciated.
       </p>
       <p>
         Thank you for exploring JobMate! If you're interested in exploring more
