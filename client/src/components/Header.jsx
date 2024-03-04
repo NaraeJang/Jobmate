@@ -1,8 +1,28 @@
 import Wrapper from '../assets/wrappers/Header';
 import hero from '../assets/images/hero.png';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 414);
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Wrapper>
       <div className="container">
@@ -21,7 +41,7 @@ const Header = () => {
               Register
             </Link>
             <Link className="btn btn-text" to="/login">
-              Log In or Try Demo User
+              Log In or{isSmallScreen && <br />} Try Demo User
             </Link>
           </div>
         </header>
