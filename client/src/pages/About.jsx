@@ -30,7 +30,6 @@ const About = () => {
         application and is not shared or used for any unauthorized purposes.
         Your privacy and data security are of utmost importance, and JobMate is
         committed to providing a secure and confidential user experience.
-        <br />
         Additionally, for users concerned about privacy, please note that you
         have the option to provide fake or anonymized information when using
         JobMate.
@@ -48,11 +47,9 @@ const About = () => {
         needs, please be aware that inappropriate information or usage will not
         be tolerated. In the event of any violation of usage policies, including
         the submission of inappropriate content, JobMate reserves the right to
-        delete user accounts without prior notification.
-      </p>
-      <p>
-        Your cooperation in maintaining a respectful and positive community
-        within JobMate is appreciated.
+        delete user accounts without prior notification. Your cooperation in
+        maintaining a respectful and positive community within JobMate is
+        appreciated.
       </p>
       <p>
         Thank you for exploring JobMate! If you're interested in exploring more
