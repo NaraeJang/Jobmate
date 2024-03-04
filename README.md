@@ -1,8 +1,6 @@
 # JobMate
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Overview
 
 JobMate is your personalized solution for tracking job applications, crafted to simplify and streamline your job search process. With JobMate, you can efficiently manage your job applications, track the progress of each one, and stay organized throughout your career journey.
 
@@ -30,7 +28,7 @@ To run JobMate locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/jobmate.git // Will be updated later.
+git clone https://github.com/NaraeJang/Jobmate.git
 
 # Navigate to the project directory
 cd jobmate
@@ -90,18 +88,14 @@ To enhance the user experience, I utilized React Query for managing and caching 
 
 The most challenging aspect was seamlessly connecting data without errors. Especially on the "All Jobs" pages, various methods were employed to communicate with the server—retrieving all data, updating data, deleting data, and fetching data specific to the user's search. Managing data and making functions independent yet seamlessly interconnected were significant learning points during this project. Being my first MERN Project, it took me a month to complete, presenting a fulfilling challenge and a valuable learning experience.
 
-#### How Can It Be Improved?
+## How Can It Be Improved?
 
 It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
 
 ## License
-
-[The MIT License (MIT)](https://opensource.org/licenses/MIT)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Copyright (c) 2024 Narae Jang
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
