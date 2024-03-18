@@ -14,8 +14,6 @@ JobMate is your personalized solution for tracking job applications, crafted to 
 
 [Go to Live Demo](https://jobmate-1gpn.onrender.com)
 
-This project is hosted on the free version of render.com. As a result, the initial loading time for the application may take approximately 2-3 minutes. Your patience is greatly appreciated as the necessary resources are provisioned for the first run. Thank you for understanding!
-
 ## How to Use the Project
 
 1. **Sign Up:** Create your JobMate account to get started.
