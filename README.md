@@ -96,12 +96,6 @@ The most challenging aspect was seamlessly connecting data without errors. Espec
 
 It would be amazing if the app has enough insight from the data, we can analyze what jobs are popular those days, how long users take to get a job successfully furthermore we can categorize it depending on cities, position or salary.
 
-## Introduction Video
-
-Preparing...
-
-<!-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VI...)](https://www.youtube.com/watch?v=YOUTU...) -->
-
 ## License
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
