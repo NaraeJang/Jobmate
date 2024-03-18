@@ -45,8 +45,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 768px) {
     .container {
-      width: 100vw;
-      width: 100svw;
+      width: 100%;
       display: flex;
       /* flex-wrap: wrap; */
       flex-direction: row;

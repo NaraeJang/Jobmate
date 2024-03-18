@@ -1,11 +1,14 @@
 import { Header, KeywordsList } from '../components';
+import Wrapper from '../assets/wrappers/Landing.js';
 
 const Landing = () => {
   return (
-    <>
-      <Header />
-      <KeywordsList />
-    </>
+    <Wrapper>
+      <div>
+        <Header />
+        <KeywordsList />
+      </div>
+    </Wrapper>
   );
 };
 export default Landing;

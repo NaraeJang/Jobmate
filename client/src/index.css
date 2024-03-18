@@ -152,6 +152,8 @@ html {
 
 body {
   background: var(--background-color);
+  max-width: 2560px;
+  margin: 0 auto;
 
   color: var(--text-color);
   font-family: var(--font-family-body);

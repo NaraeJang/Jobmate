@@ -6,8 +6,7 @@ const Wrapper = styled.section`
 
   div {
     height: 4.625rem;
-    width: 100vw;
-    width: 100svw;
+    width: 100%;
 
     display: flex;
     align-items: center;

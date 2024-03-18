@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   /* background-color: var(--primary-50); */
-  width: 100svw;
-  width: 100vw;
+  width: 100%;
+
   height: 100vh;
 
   display: flex;

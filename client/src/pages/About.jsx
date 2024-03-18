@@ -56,8 +56,10 @@ const About = () => {
         of my web development projects, feel free to visit my portfolio website.
         There, you can find a collection of projects that showcase my skills and
         passion for creating engaging web applications. Visit my portfolio at{' '}
-        <a href="#">my portfolio website</a>. Thank you for your interest in
-        JobMate and my other projects!
+        <a href="https://naraejang.dev/" target="_blank">
+          my portfolio website
+        </a>
+        . Thank you for your interest in JobMate and my other projects!
       </p>
     </Wrapper>
   );
