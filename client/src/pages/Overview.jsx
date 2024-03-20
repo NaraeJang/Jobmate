@@ -24,11 +24,13 @@ const Overview = () => {
   const { data } = useQuery(overviewQuery);
   const { defaultStats, monthlyApplications } = data;
 
-  useEffect(() => {
-    if (monthlyApplications.length < 1) {
-      return navigate('/dashboard/add-job');
-    }
-  }, []);
+  if (monthlyApplications?.length > 1) {
+    return (
+      <Wrapper>
+        <h2 className="no-job">Please add jobs you applied...</h2>
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>
