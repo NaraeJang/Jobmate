@@ -40,6 +40,14 @@ if (process.env.NODE_ENV === 'development') {
 app.use(cookieParser());
 app.use(express.json()); // built-in middleware in order to send and receive json from server and front-end.
 app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      'img-src': ["'self'", 'https: data:'],
+    },
+  })
+);
 app.use(mongoSanitize());
 
 app.use('/api/v1/jobs', authenticateUser, jobRouter);
