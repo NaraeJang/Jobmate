@@ -24,17 +24,15 @@ const Overview = () => {
   const { data } = useQuery(overviewQuery);
   const { defaultStats, monthlyApplications } = data;
 
-  if (monthlyApplications?.length > 1) {
-    return (
-      <Wrapper>
-        <h2 className="no-job">Please add jobs you applied...</h2>
-      </Wrapper>
-    );
-  }
+  useEffect(() => {
+    if (monthlyApplications.length < 1) {
+      return navigate('/dashboard/add-job');
+    }
+  }, [data]);
 
   return (
     <Wrapper>
-      {monthlyApplications?.length > 1 && (
+      {monthlyApplications?.length >= 1 && (
         <>
           <OverviewCard defaultStats={defaultStats} />
           <ChartContainer data={monthlyApplications} />
