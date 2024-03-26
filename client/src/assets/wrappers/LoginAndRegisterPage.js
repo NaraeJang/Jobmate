@@ -4,7 +4,7 @@ const Wrapper = styled.section`
   /* background-color: var(--primary-50); */
   width: 100%;
 
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   align-items: center;
