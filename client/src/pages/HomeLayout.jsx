@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { NavbarDesktop, NavbarMobile } from '../components';
+import Wrapper from '../assets/wrappers/Footer';
 
 const HomeLayout = () => {
   const date = new Date().getFullYear();
 
   return (
-    <div>
+    <Wrapper>
       <NavbarDesktop />
       <NavbarMobile />
       <Outlet />
@@ -14,7 +15,7 @@ const HomeLayout = () => {
           <p>&copy; {date} Narae Jang. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    </Wrapper>
   );
 };
 export default HomeLayout;

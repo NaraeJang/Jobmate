@@ -23,8 +23,8 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 769px) {
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
+    min-height: 100svh;
   }
 `;
 
