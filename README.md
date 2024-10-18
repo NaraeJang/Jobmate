@@ -13,7 +13,7 @@ JobMate is your personalized solution for tracking job applications, crafted to 
 #### Live Demo
 
 [Go to Live Demo](https://jobmate-1gpn.onrender.com)
-*It will take up to 2-3 mins to run the server.
+*Currently, I closed live demo. It wouldn't work.
 
 ## How to Use the Project
 
